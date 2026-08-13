@@ -3,48 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nutrimarc - Premium Nutrition & Wellness</title>
+    <title>Nutrimarc | Health & Intelligent Systems</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <!-- Header / Navbar -->
     <header class="navbar">
-        <div class="logo">Nutrimarc</div>
+        <div class="logo-container">
+            <!-- LOGO PROVISION: Replace 'logo.png' with your image file path -->
+            <img src="logo.png" alt="Nutrimarc Logo" class="logo-img" id="logo-placeholder" onerror="this.style.display='none'; document.getElementById('logo-text').style.display='block';">
+            <span class="logo-text" id="logo-text" style="display: none;">Nutrimarc</span>
+        </div>
         <nav>
-            <a href="#about">About Us</a>
-            <a href="#services">Products</a>
-            <a href="#contact" class="btn">Get in Touch</a>
+            <a href="#about">About</a>
+            <a href="#food-services">Healthy Foods</a>
+            <a href="#tech-services">Intelligent Systems</a>
+            <a href="#contact" class="btn-nav">Contact Us</a>
         </nav>
     </header>
 
+    <!-- Dynamic Hero Greeting Section -->
     <section class="hero">
-        <h1>Nourish Your Life with Nutrimarc</h1>
-        <p>Discover clean, science-backed nutrition engineered for peak performance and everyday vitality.</p>
-        <button id="cta-btn">Explore Products</button>
-    </section>
-
-    <section id="about" class="section">
-        <h2>About Nutrimarc</h2>
-        <p>At Nutrimarc, we believe that good health starts with authentic ingredients. Our mission is to deliver high-quality nutrition to empower your daily lifestyle.</p>
-    </section>
-
-    <section id="services" class="section cards">
-        <div class="card">
-            <h3>Pure Quality</h3>
-            <p>100% organic, lab-tested ingredients without artificial fillers.</p>
-        </div>
-        <div class="card">
-            <h3>Science Backed</h3>
-            <p>Formulated by nutritionists to maximize bioavailability.</p>
-        </div>
-        <div class="card">
-            <h3>Sustainable</h3>
-            <p>Eco-friendly packaging and ethically sourced raw materials.</p>
+        <div class="hero-content">
+            <span class="greeting-badge" id="dynamic-greeting">Welcome to Nutrimarc</span>
+            <h1>Empowering Healthy Living & Tech Innovation</h1>
+            <p>From organic wellness products to cutting-edge AI and cloud solution services, we build the future of human health and digital intelligence.</p>
+            <div class="hero-btns">
+                <a href="#updates" class="btn-primary">Stay Updated</a>
+                <a href="#tech-services" class="btn-secondary">Explore Services</a>
+            </div>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 Nutrimarc. All rights reserved.</p>
+    <!-- Company Overview -->
+    <section id="about" class="section about-section">
+        <h2>Two Domains, One Vision</h2>
+        <p>Nutrimarc bridges the gap between biological well-being and digital evolution. We provide premium organic food services while engineering state-of-the-art intelligent technology systems for modern businesses.</p>
+    </section>
+
+    <!-- Domain 1: Healthy Food Services -->
+    <section id="food-services" class="section domain-section food-domain">
+        <div class="domain-header">
+            <span class="tag">Domain 01</span>
+            <h2>Healthy Food Services</h2>
+            <p>Nourishing bodies with pure, high-quality, science-backed nutritional solutions.</p>
+        </div>
+        <div class="cards-grid">
+            <div class="card">
+                <div class="icon">🥗</div>
+                <h3>Organic Products</h3>
+                <p>100% clean, ethically sourced nutrition engineered for daily vitality.</p>
+            </div>
+            <div class="card">
+                <div class="icon">🔬</div>
+                <h3>Science-Backed Formulations</h3>
+                <p>Formulated by nutritionists to maximize health benefits and bioavailability.</p>
+            </div>
+            <div class="card">
+                <div class="icon">🌱</div>
+                <h3>Sustainable Sourcing</h3>
+                <p>Eco-conscious packaging and sustainable ingredients for a better planet.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Domain 2: Advanced Intelligent Systems -->
+    <section id="tech-services" class="section domain-section tech-domain">
+        <div class="domain-header">
+            <span class="tag tag-tech">Domain 02</span>
+            <h2>Advanced Intelligent Systems</h2>
+            <p>Accelerating digital transformation through specialized tech consulting and intelligence.</p>
+        </div>
+        <div class="cards-grid">
+            <div class="card">
+                <div class="icon">🎓</div>
+                <h3>Training & Upskilling</h3>
+                <p>Expert-led training in Cloud Computing, Artificial Intelligence, and Modern Tech Stacks.</p>
+            </div>
+            <div class="card">
+                <div class="icon">👥</div>
+                <h3>Tech Staffing</h3>
+                <p>Connecting companies with top-tier AI engineers, cloud architects, and developers.</p>
+            </div>
+            <div class="card">
+                <div class="icon">🚀</div>
+                <h3>Digital Marketing</h3>
+                <p>Data-driven marketing strategies to expand brand reach and engagement.</p>
+            </div>
+            <div class="card">
+                <div class="icon">💡</div>
+                <h3>IT Consulting Services</h3>
+                <p>Strategic technology advice, architecture design, and enterprise cloud migrations.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter / Updates Section -->
+    <section id="updates" class="section updates-section">
+        <div class="updates-box">
+            <h2>Be the First to Know</h2>
+            <p>Exciting health launches and breakthroughs in AI are coming soon. Join our community to get exclusive early access and regular updates!</p>
+            <form class="subscribe-form" onsubmit="handleSubscribe(event)">
+                <input type="email" placeholder="Enter your business email" required>
+                <button type="submit">Notify Me</button>
+            </form>
+            <p id="sub-msg" class="sub-msg"></p>
+        </div>
+    </section>
+
+    <!-- Contact & Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <h3>Get in Touch</h3>
+            <p>Have questions about our products or IT services? Reach out directly:</p>
+            <p class="email-link">📧 <a href="mailto:contact@nutrimarc.com">contact@nutrimarc.com</a></p>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Nutrimarc. All rights reserved.</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
