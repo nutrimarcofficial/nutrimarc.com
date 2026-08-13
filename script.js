@@ -1,24 +1,48 @@
-// Dynamic Greeting based on visitor's time of day
+// Dynamic Time Greeting
 document.addEventListener("DOMContentLoaded", () => {
-    const greetingElement = document.getElementById("dynamic-greeting");
+    const greeting = document.getElementById("dynamic-greeting");
     const hour = new Date().getHours();
-    let timeGreeting = "Welcome to Nutrimarc";
+    let text = "Welcome to Nutrimarc";
 
-    if (hour < 12) {
-        timeGreeting = "Good Morning! Welcome to Nutrimarc";
-    } else if (hour < 18) {
-        timeGreeting = "Good Afternoon! Welcome to Nutrimarc";
-    } else {
-        timeGreeting = "Good Evening! Welcome to Nutrimarc";
-    }
+    if (hour < 12) text = "Good Morning — Welcome to Nutrimarc";
+    else if (hour < 18) text = "Good Afternoon — Welcome to Nutrimarc";
+    else text = "Good Evening — Welcome to Nutrimarc";
 
-    greetingElement.textContent = timeGreeting;
+    if (greeting) greeting.textContent = text;
+    
+    initCounters();
 });
 
-// Subscription Form Interactivity
+// Interactive Subscription Handling
 function handleSubscribe(event) {
     event.preventDefault();
     const msg = document.getElementById("sub-msg");
-    msg.textContent = "Thank you! You have been added to our priority update list.";
+    msg.textContent = "✓ Success! You're on Nutrimarc's update notification list.";
     event.target.reset();
+}
+
+// Counter Animation for Metrics
+function initCounters() {
+    const counters = document.querySelectorAll('.counter');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const target = +entry.target.getAttribute('data-target');
+                let count = 0;
+                const update = () => {
+                    count += Math.ceil(target / 100);
+                    if (count < target) {
+                        entry.target.innerText = count;
+                        setTimeout(update, 20);
+                    } else {
+                        entry.target.innerText = target;
+                    }
+                };
+                update();
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    counters.forEach(counter => observer.observe(counter));
 }
