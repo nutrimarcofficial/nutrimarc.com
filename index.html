@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-    <!-- Remix Icon CDN for Tooling & Tech Symbols -->
+    <!-- Remix Icon CDN for Tooling & Social Logos -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 <body>
@@ -24,7 +24,6 @@
                 <span class="ticker-item">🚀 Nutrimarc IT Consulting expands enterprise cloud architecture services.</span>
                 <span class="ticker-item">📩 Subscribe below to receive early-access updates directly to your inbox!</span>
             </div>
-            <!-- Duplicated content for seamless infinite looping -->
             <div class="ticker-content" aria-hidden="true">
                 <span class="ticker-item">🌱 <strong>Stay Tuned!</strong> Next-Gen Organic Superfood Formulations launching soon.</span>
                 <span class="ticker-item">⚡ <strong>Enrollment Open:</strong> Advanced Generative AI & Cloud Upskilling Bootcamps.</span>
@@ -46,6 +45,7 @@
             <a href="#pillars">Pillars of Excellence</a>
             <a href="#food-pillar">Healthy Foods</a>
             <a href="#tech-pillar">Advanced Systems</a>
+            <a href="#enquiry">Enquiry Form</a>
             <a href="#contact" class="btn-nav">Contact Us <i class="ri-arrow-right-up-line"></i></a>
         </nav>
     </header>
@@ -56,9 +56,15 @@
         <div class="ambient-glow glow-blue"></div>
         
         <div class="hero-container">
-            <div class="status-pill">
-                <span class="pulse-dot"></span>
-                <span id="dynamic-greeting">Welcome to Nutrimarc</span>
+            <div class="status-pills-wrapper">
+                <div class="status-pill">
+                    <span class="pulse-dot"></span>
+                    <span id="dynamic-greeting">Welcome to Nutrimarc</span>
+                </div>
+                <!-- Hit Counter Badge -->
+                <div class="hit-counter-pill">
+                    <i class="ri-eye-line"></i> Total Visits: <span id="hit-count">Loading...</span>
+                </div>
             </div>
             
             <h1>Pioneering <span class="txt-gradient-green">Human Health</span> & <span class="txt-gradient-blue">Advanced Intelligent Enterprise Systems</span></h1>
@@ -92,7 +98,6 @@
                 <p>Delivering 100% clean, organic, and lab-tested nutrition engineered for peak human performance.</p>
             </div>
 
-            <!-- Health Badges -->
             <div class="tooling-strip health-strip">
                 <span class="tool-pill"><i class="ri-checkbox-circle-fill"></i> USDA Organic Grade</span>
                 <span class="tool-pill"><i class="ri-flask-fill"></i> Lab Verified Bioavailability</span>
@@ -131,7 +136,6 @@
                 <p class="text-muted">Empowering modern organizations with cutting-edge Cloud, AI, Specialized Staffing, and Strategic IT Consulting.</p>
             </div>
 
-            <!-- Technology Stack Symbols -->
             <div class="tooling-strip tech-strip">
                 <span class="tech-pill"><i class="ri-amazon-line"></i> AWS Cloud</span>
                 <span class="tech-pill"><i class="ri-microsoft-line"></i> Azure Enterprise</span>
@@ -141,7 +145,6 @@
             </div>
 
             <div class="cards-grid grid-2">
-                <!-- Service 1: Training -->
                 <div class="glass-card card-tech">
                     <div class="icon-box icon-blue"><i class="ri-graduation-cap-line"></i></div>
                     <h3>Advanced Systems Training</h3>
@@ -153,7 +156,6 @@
                     </div>
                 </div>
 
-                <!-- Service 2: Staffing -->
                 <div class="glass-card card-tech">
                     <div class="icon-box icon-blue"><i class="ri-user-star-line"></i></div>
                     <h3>Specialized Tech Staffing</h3>
@@ -165,7 +167,6 @@
                     </div>
                 </div>
 
-                <!-- Service 3: Digital Marketing -->
                 <div class="glass-card card-tech">
                     <div class="icon-box icon-blue"><i class="ri-line-chart-line"></i></div>
                     <h3>Data-Driven Digital Marketing</h3>
@@ -177,7 +178,6 @@
                     </div>
                 </div>
 
-                <!-- Service 4: IT Consulting -->
                 <div class="glass-card card-tech">
                     <div class="icon-box icon-blue"><i class="ri-lightbulb-line"></i></div>
                     <h3>Strategic IT Consulting</h3>
@@ -209,7 +209,52 @@
         </div>
     </section>
 
-    <!-- Stay Tuned Subscription Section -->
+    <!-- SECTION: ENQUIRY FORM -->
+    <section id="enquiry" class="section enquiry-section">
+        <div class="container">
+            <div class="section-title">
+                <span class="category-badge">SUBMIT AN ENQUIRY</span>
+                <h2>How Can We Help You?</h2>
+                <p>Submit your query and receive a unique tracking identifier. Our team will get back to you promptly.</p>
+            </div>
+
+            <div class="enquiry-card">
+                <form id="enquiry-form" onsubmit="handleEnquirySubmit(event)">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" required placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" required placeholder="john@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" placeholder="+91 9876543210">
+                        </div>
+                        <div class="form-group">
+                            <label for="category">Category *</label>
+                            <select id="category" required>
+                                <option value="" disabled selected>Select Category...</option>
+                                <option value="Healthy Food Services">Healthy Food Services</option>
+                                <option value="Advanced Intelligent Systems">Advanced Intelligent Systems</option>
+                                <option value="General">General</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="message">Your Message / Enquiry *</label>
+                        <textarea id="message" rows="5" required placeholder="Describe your requirements or questions..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Submit Enquiry <i class="ri-send-plane-fill"></i></button>
+                </form>
+                <div id="enquiry-result" class="enquiry-result" style="display: none;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
     <section class="section newsletter-section">
         <div class="newsletter-card">
             <div class="news-badge"><i class="ri-notification-badge-line"></i> STAY TUNED FOR UPDATES</div>
@@ -227,7 +272,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer & Direct Contact Links -->
     <footer id="contact">
         <div class="container footer-grid">
             <div class="footer-brand">
@@ -235,6 +280,11 @@
                     <span class="logo-bold">NUTRI</span><span class="logo-accent">MARC</span>
                 </div>
                 <p>Bridging pure organic nutrition with enterprise-level Advanced Intelligent Enterprise Systems.</p>
+                <br>
+                <div class="address-box">
+                    <h4><i class="ri-map-pin-2-fill"></i> Address</h4>
+                    <p>Mallampet, Bachupally<br>Hyderabad, Telangana, India</p>
+                </div>
             </div>
 
             <div class="footer-col">
@@ -242,16 +292,48 @@
                 <a href="#food-pillar">Healthy Food Services</a>
                 <a href="#tech-pillar">Advanced Intelligent Systems</a>
                 <a href="#pillars">About Nutrimarc</a>
+                <a href="#enquiry">Submit Enquiry</a>
             </div>
 
             <div class="footer-col">
-                <h4>Get in Touch</h4>
-                <p>Have questions regarding enterprise consulting or bulk food distribution?</p>
-                <a href="mailto:contact@nutrimarc.com" class="email-btn"><i class="ri-mail-line"></i> contact@nutrimarc.com</a>
+                <h4>Contact Us Directly</h4>
+                <ul class="contact-list">
+                    <li>
+                        <a href="https://wa.me/918919394401" target="_blank" rel="noopener">
+                            <i class="ri-whatsapp-fill icon-wa"></i> WhatsApp: +91-8919394401
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tel:+918919394401">
+                            <i class="ri-phone-fill icon-phone"></i> Call: +91-8919394401
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:contact@nutrimarc.com">
+                            <i class="ri-mail-fill icon-mail"></i> contact@nutrimarc.com
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/NutrimarcOfficial" target="_blank" rel="noopener">
+                            <i class="ri-instagram-fill icon-ig"></i> Instagram: NutrimarcOfficial
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/@NutrimarcOfficial" target="_blank" rel="noopener">
+                            <i class="ri-youtube-fill icon-yt"></i> YouTube: NutrimarcOfficial
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://nutrimarc.com" target="_blank" rel="noopener">
+                            <i class="ri-global-fill icon-web"></i> Website: nutrimarc.com
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
+
         <div class="footer-bottom">
-            <p>&copy; 2026 Nutrimarc. All rights reserved.</p>
+            <p>&copy; 2026 Nutrimarc. All rights reserved. | <span class="footer-hits"><i class="ri-bar-chart-line"></i> Total Visits: <span id="footer-hit-count">...</span></span></p>
         </div>
     </footer>
 
