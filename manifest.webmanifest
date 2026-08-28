@@ -1,0 +1,9 @@
+{
+  "name":"NutriMarc Group",
+  "short_name":"NutriMarc",
+  "start_url":"/",
+  "display":"standalone",
+  "background_color":"#f7f4eb",
+  "theme_color":"#123d26",
+  "icons":[{"src":"assets/logo.jpg","sizes":"1536x1536","type":"image/jpeg","purpose":"any maskable"}]
+}
