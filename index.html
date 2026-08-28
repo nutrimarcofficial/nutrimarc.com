@@ -1,29 +1,40 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NutriMarc Group | Healthy Food Services & Advanced Intelligent Systems</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-    <!-- Remix Icon CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <!-- Exact Brand Keyword Target for Google Index Matching -->
+    <title>NutriMarc Group | Healthy Food Services (NHFS) & Advanced Intelligent Systems (NAIS)</title>
+    
+    <!-- Meta Description using exact business text to match search queries -->
+    <meta name="description" content="NutriMarc Group pioneers organic homemade foods, pickles, and baked goods alongside world-class IT consulting, GenAI bootcamps, and cloud architectures.">
+    
+    <!-- Canonical tag to lock your custom domain authority -->
+    <link rel="canonical" href="https://nutrimarc.com/">
+
+    <!-- Open Graph tags for optimized brand rendering when shared across platforms -->
+    <meta property="og:title" content="NutriMarc Group | Healthy Foods & Intelligent Systems">
+    <meta property="og:description" content="Fueling personal vitality with 100% natural homemade foods while driving business transformations.">
+    <meta property="og:url" content="https://nutrimarc.com/">
+    <meta property="og:type" content="website">
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- Live Ticker Banner -->
+    <!-- 1. TICKER BANNER -->
     <div class="ticker-wrap">
         <div class="ticker-label">
-            <i class="ri-flashlight-fill"></i> LIVE ANNOUNCEMENTS
+            <span>LIVE ANNOUNCEMENTS</span>
         </div>
         <div class="ticker-track">
             <div class="ticker-content">
                 <span class="ticker-item">🌱 <strong>NHFS Offer:</strong> Flat 20% OFF for the first 10 customers! Free shipping above ₹1499 & within 5km of Bachupally, Hyd.</span>
                 <span class="ticker-item">⚡ <strong>NAIS Enrollment Open:</strong> Advanced Generative AI & Cloud Upskilling Bootcamps.</span>
                 <span class="ticker-item">🚀 NutriMarc IT Consulting expands enterprise cloud architecture services.</span>
-            </div>
-            <div class="ticker-content" aria-hidden="true">
+                <!-- Duplicate for seamless loop -->
                 <span class="ticker-item">🌱 <strong>NHFS Offer:</strong> Flat 20% OFF for the first 10 customers! Free shipping above ₹1499 & within 5km of Bachupally, Hyd.</span>
                 <span class="ticker-item">⚡ <strong>NAIS Enrollment Open:</strong> Advanced Generative AI & Cloud Upskilling Bootcamps.</span>
                 <span class="ticker-item">🚀 NutriMarc IT Consulting expands enterprise cloud architecture services.</span>
@@ -31,100 +42,93 @@
         </div>
     </div>
 
-    <!-- Navigation Header -->
-    <header class="navbar">
-        <div class="logo-container">
-            <div class="logo-text" id="logo-text">
-                <span class="logo-bold">NUTRI</span><span class="logo-accent">MARC</span>
-            </div>
-        </div>
-        <nav class="nav-links">
-            <a href="#about-brand-modal" class="modal-trigger">About NutriMarc</a>
+    <!-- 2. NAVBAR -->
+    <nav class="navbar">
+        <a href="#" style="text-decoration: none;">
+            <span class="logo-bold">NUTRI</span><span class="logo-accent">MARC</span>
+        </a>
+        <div class="nav-links">
+            <a href="#about-overview">About NutriMarc</a>
             <a href="#pillars">Pillars</a>
-            <a href="#foods">NHFS Store & Menu</a>
-            
-            <!-- NAIS Mega Dropdown -->
+            <a href="#nhfs">NHFS Store & Menu</a>
             <div class="nav-dropdown">
-                <a href="#technology" class="dropdown-trigger">
-                    Advanced Intelligent Systems (NAIS) <i class="ri-arrow-down-s-line"></i>
-                </a>
+                <span class="dropdown-trigger">Advanced Intelligent Systems (NAIS) ▾</span>
                 <div class="dropdown-menu">
                     <div class="dropdown-col">
-                        <h4><i class="ri-information-line"></i> About NAIS</h4>
+                        <h4>About NAIS</h4>
                         <p><strong>NutriMarc Advanced Intelligent Systems (NAIS)</strong> drives enterprise technological transformations with custom system modernizations at optimal timelines.</p>
                     </div>
                     <div class="dropdown-col">
-                        <h4><i class="ri-stack-line"></i> Core Offerings</h4>
+                        <h4>Core Offerings</h4>
                         <ul class="dropdown-list">
-                            <li><strong>1. IT Consulting:</strong> <span>Multi-Cloud, GenAI, Agentic AI, Thought Leadership.</span></li>
-                            <li><strong>2. Elite Training:</strong> <span>GenAI, Agentic Quantum Computing, Blockchain, etc.</span></li>
-                            <li><strong>3. Digital Marketing:</strong> <span>Growth hacking and data analytics.</span></li>
-                            <li><strong>4. IT Staffing:</strong> <span>Top-tier tech resource deployment.</span></li>
+                            <li><strong>1. IT Consulting</strong><span>Multi-Cloud, GenAI, Agentic AI, Thought Leadership.</span></li>
+                            <li><strong>2. Elite Training</strong><span>GenAI, Agentic Quantum Computing, Blockchain, etc.</span></li>
+                            <li><strong>3. Digital Marketing</strong><span>Growth hacking and data analytics.</span></li>
+                            <li><strong>4. IT Staffing</strong><span>Top-tier tech resource deployment.</span></li>
                         </ul>
                     </div>
-                    <div class="dropdown-col col-cta">
-                        <h4><i class="ri-customer-service-2-line"></i> Quick Actions</h4>
+                    <div class="dropdown-col">
+                        <h4>Quick Actions</h4>
                         <div class="dropdown-actions">
-                            <a href="#enquiry" class="btn-dd-primary"><i class="ri-file-list-3-line"></i> Submit Service Request</a>
-                            <a href="https://wa.me/918919394401" target="_blank" class="btn-dd-wa"><i class="ri-whatsapp-line"></i> WhatsApp Direct</a>
+                            <a href="#enquiry" class="btn-dd-primary">Submit Service Request</a>
+                            <a href="https://wa.me/918919394401" class="btn-dd-wa">WhatsApp Direct</a>
                         </div>
                     </div>
                 </div>
             </div>
+            <a href="#enquiry" class="btn-nav">Contact Us</a>
+        </div>
+    </nav>
 
-            <a href="#enquiry">Enquiry Form</a>
-            <a href="#contact" class="btn-nav">Contact Us <i class="ri-arrow-right-up-line"></i></a>
-        </nav>
-    </header>
-
-    <!-- Brand Overview Modal -->
-    <div id="about-brand-modal" class="modal-overlay">
+    <!-- 3. BRAND OVERVIEW MODAL -->
+    <div id="about-overview" class="modal-overlay">
         <div class="modal-card">
             <a href="#" class="modal-close">&times;</a>
             <div class="modal-header">
                 <span class="category-badge">BRAND OVERVIEW</span>
                 <h2>About NutriMarc Group</h2>
             </div>
-            <div class="modal-body">
-                <p><strong>NutriMarc Group</strong> is a dual-engine brand operating at the intersection of biological human wellness and advanced technological intelligence.</p>
-                <hr class="modal-divider">
-                <div class="modal-pillar-grid">
-                    <div class="modal-pillar-card p-green">
-                        <h4><i class="ri-leaf-line"></i> a) NutriMarc Healthy Food Services (NHFS)</h4>
-                        <p>Specializes in healthy home foods, fresh veg and non-veg pickles, baked items, savories, and health powders as per our signature menu.</p>
-                    </div>
-                    <div class="modal-pillar-card p-blue">
-                        <h4><i class="ri-cpu-line"></i> b) NutriMarc Advanced Intelligent Systems (NAIS)</h4>
-                        <p>Specializes in IT Consulting (Multi-Cloud, GenAI, Agentic AI), Tech Training (GenAI, Quantum Computing, Blockchain), Digital Marketing, and IT Staffing.</p>
-                    </div>
+            <hr class="modal-divider">
+            <p><strong>NutriMarc Group</strong> is a dual-engine brand operating at the intersection of biological human wellness and advanced technological intelligence.</p>
+            <div class="modal-pillar-grid">
+                <div class="modal-pillar-card p-green">
+                    <h4>a) NutriMarc Healthy Food Services (NHFS)</h4>
+                    <p>Specializes in healthy home foods, fresh veg and non-veg pickles, baked items, savories, and health powders as per our signature menu.</p>
+                </div>
+                <div class="modal-pillar-card p-blue">
+                    <h4>b) NutriMarc Advanced Intelligent Systems (NAIS)</h4>
+                    <p>Specializes in IT Consulting (Multi-Cloud, GenAI, Agentic AI), Tech Training (GenAI, Quantum Computing, Blockchain), Digital Marketing, and IT Staffing.</p>
                 </div>
             </div>
-            <div class="modal-footer"><a href="#" class="btn-modal-close">Close Overview</a></div>
+            <div class="modal-footer">
+                <a href="#" class="btn-modal-close">Close Overview</a>
+            </div>
         </div>
     </div>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- 4. HERO SECTION -->
+    <header class="hero">
         <div class="ambient-glow glow-green"></div>
         <div class="ambient-glow glow-blue"></div>
-        <div class="hero-container">
-            <div class="status-pills-wrapper">
-                <div class="status-pill"><span class="pulse-dot"></span> Welcome to NutriMarc Group</div>
-            </div>
-            <h1>Pioneering <span class="txt-gradient-green">Healthy Foods (NHFS)</span> & <span class="txt-gradient-blue">Advanced Intelligent Systems (NAIS)</span></h1>
-            <p class="hero-sub">Fueling personal vitality with 100% natural homemade foods while driving business transformation through world-class IT consulting, training, staffing, and marketing.</p>
-            <div class="hero-actions">
-                <a href="#foods" class="btn-hero btn-green"><i class="ri-restaurant-fill"></i> Order Healthy Foods (NHFS)</a>
-                <a href="#technology" class="btn-hero btn-blue"><i class="ri-cpu-fill"></i> Explore NAIS Services</a>
+        <div class="status-pills-wrapper">
+            <div class="status-pill">
+                <div class="pulse-dot"></div>
+                Welcome to NutriMarc Group
             </div>
         </div>
-    </section>
+        <h1>Pioneering <span class="txt-gradient-green">Healthy Foods (NHFS)</span> & <span class="txt-gradient-blue">Advanced Intelligent Systems (NAIS)</span></h1>
+        <p class="hero-sub">Fueling personal vitality with 100% natural homemade foods while driving business transformation through world-class IT consulting, training, staffing, and marketing.</p>
+        <div class="hero-actions">
+            <a href="#nhfs" class="btn-hero btn-green">Order Healthy Foods (NHFS)</a>
+            <a href="#nais" class="btn-hero btn-blue">Explore NAIS Services</a>
+        </div>
+    </header>
 
-    <!-- SECTION: NHFS ONLINE ORDERING STORE (Based on Menu NHFS) -->
-    <section id="foods" class="pillar-section food-theme">
+    <!-- 5. NHFS SECTION -->
+    <section id="nhfs" class="section">
         <div class="container">
-            <div class="pillar-header">
-                <span class="pillar-tag tag-green"><i class="ri-plant-fill"></i> DIVISION 01</span>
+            <div class="section-title">
+                <span class="category-badge">DIVISION 01</span>
                 <h2>NutriMarc Healthy Food Services (NHFS)</h2>
                 <p>Order fresh, authentic, homemade organic pickles, savories, powders, and baked goods directly from our catalog.</p>
             </div>
@@ -134,508 +138,446 @@
                 <p>Free shipping within 5km radius of Bachupally, Hyderabad • Free shipping on orders above ₹1499</p>
             </div>
 
-            <!-- NON-VEG PICKLES -->
-            <h3 class="menu-category-title"><i class="ri-restaurant-line"></i> Non-Veg Pickles</h3>
+            <!-- Non-Veg Pickles -->
+            <h3 class="menu-category-title">🍗 Non-Veg Pickles</h3>
             <div class="menu-items-grid">
-                <div class="menu-item-card" data-name="Chicken Pickle (Chicken)" data-price-250="249" data-price-500="499" data-price-1000="999">
+                <div class="menu-item-card">
                     <div class="menu-item-info">
                         <h4>Chicken Pickle (Chicken)</h4>
                         <p class="text-muted">Authentic homemade traditional recipe.</p>
                     </div>
                     <div class="menu-item-controls">
-                        <select class="item-size">
-                            <option value="250gm">250gm - ₹249</option>
-                            <option value="500gm">500gm - ₹499</option>
-                            <option value="1kg">1kg - ₹999</option>
+                        <select>
+                            <option>250gm - ₹249</option>
+                            <option>500gm - ₹499</option>
+                            <option>1kg - ₹999</option>
                         </select>
-                        <input type="number" class="item-qty" value="1" min="1">
-                        <button class="btn-add-cart" onclick="addToCart(this)"><i class="ri-shopping-cart-add-line"></i> Add</button>
+                        <input type="number" value="1" min="1">
+                        <button class="btn-add-cart">Add</button>
                     </div>
                 </div>
-
-                <div class="menu-item-card" data-name="Chicken Boneless Pickle" data-price-250="299" data-price-500="599" data-price-1000="1200">
+                <div class="menu-item-card">
                     <div class="menu-item-info">
                         <h4>Chicken Boneless Pickle</h4>
                         <p class="text-muted">Tender boneless chicken chunks infused with spices.</p>
                     </div>
                     <div class="menu-item-controls">
-                        <select class="item-size">
-                            <option value="250gm">250gm - ₹299</option>
-                            <option value="500gm">500gm - ₹599</option>
-                            <option value="1kg">1kg - ₹1200</option>
+                        <select>
+                            <option>250gm - ₹299</option>
+                            <option>500gm - ₹599</option>
+                            <option>1kg - ₹1200</option>
                         </select>
-                        <input type="number" class="item-qty" value="1" min="1">
-                        <button class="btn-add-cart" onclick="addToCart(this)"><i class="ri-shopping-cart-add-line"></i> Add</button>
+                        <input type="number" value="1" min="1">
+                        <button class="btn-add-cart">Add</button>
                     </div>
                 </div>
-
-                <div class="menu-item-card" data-name="Chicken Gongura Pickle" data-price-250="375" data-price-500="750" data-price-1000="1500">
+                <div class="menu-item-card">
                     <div class="menu-item-info">
                         <h4>Chicken Gongura Pickle</h4>
                         <p class="text-muted">Classic tangy sorrel leaves paired with succulent chicken.</p>
                     </div>
                     <div class="menu-item-controls">
-                        <select class="item-size">
-                            <option value="250gm">250gm - ₹375</option>
-                            <option value="500gm">500gm - ₹750</option>
-                            <option value="1kg">1kg - ₹1500</option>
+                        <select>
+                            <option>250gm - ₹375</option>
+                            <option>500gm - ₹750</option>
+                            <option>1kg - ₹1500</option>
                         </select>
-                        <input type="number" class="item-qty" value="1" min="1">
-                        <button class="btn-add-cart" onclick="addToCart(this)"><i class="ri-shopping-cart-add-line"></i> Add</button>
+                        <input type="number" value="1" min="1">
+                        <button class="btn-add-cart">Add</button>
                     </div>
                 </div>
-
-                <div class="menu-item-card" data-name="Mutton Pickle" data-price-250="425" data-price-500="850" data-price-1000="1700">
+                <div class="menu-item-card">
                     <div class="menu-item-info">
                         <h4>Mutton Pickle</h4>
                         <p class="text-muted">Rich, tender mutton slow-cooked in traditional spices.</p>
                     </div>
                     <div class="menu-item-controls">
-                        <select class="item-size">
-                            <option value="250gm">250gm - ₹425</option>
-                            <option value="500gm">500gm - ₹850</option>
-                            <option value="1kg">1kg - ₹1700</option>
+                        <select>
+                            <option>250gm - ₹425</option>
+                            <option>500gm - ₹850</option>
+                            <option>1kg - ₹1700</option>
                         </select>
-                        <input type="number" class="item-qty" value="1" min="1">
-                        <button class="btn-add-cart" onclick="addToCart(this)"><i class="ri-shopping-cart-add-line"></i> Add</button>
+                        <input type="number" value="1" min="1">
+                        <button class="btn-add-cart">Add</button>
                     </div>
                 </div>
-
-                <div class="menu-item-card" data-name="Prawn Pickle" data-price-250="400" data-price-500="800" data-price-1000="1600">
+                <div class="menu-item-card">
                     <div class="menu-item-info">
                         <h4>Prawn Pickle</h4>
                         <p class="text-muted">Fresh coastal prawns seasoned with aromatic spices.</p>
                     </div>
                     <div class="menu-item-controls">
-                        <select class="item-size">
-                            <option value="250gm">250gm - ₹400</option>
-                            <option value="500gm">500gm - ₹800</option>
-                            <option value="1kg">1kg - ₹1600</option>
+                        <select>
+                            <option>250gm - ₹400</option>
+                            <option>500gm - ₹800</option>
+                            <option>1kg - ₹1600</option>
                         </select>
-                        <input type="number" class="item-qty" value="1" min="1">
-                        <button class="btn-add-cart" onclick="addToCart(this)"><i class="ri-shopping-cart-add-line"></i> Add</button>
+                        <input type="number" value="1" min="1">
+                        <button class="btn-add-cart">Add</button>
                     </div>
                 </div>
-
-                <div class="menu-item-card" data-name="Prawn Gongura Pickle" data-price-250="450" data-price-500="900" data-price-1000="1800">
+                <div class="menu-item-card">
                     <div class="menu-item-info">
                         <h4>Prawn Gongura Pickle</h4>
                         <p class="text-muted">Prawns combined with tangy gongura leaves.</p>
                     </div>
                     <div class="menu-item-controls">
-                        <select class="item-size">
-                            <option value="250gm">250gm - ₹450</option>
-                            <option value="500gm">500gm - ₹900</option>
-                            <option value="1kg">1kg - ₹1800</option>
+                        <select>
+                            <option>250gm - ₹450</option>
+                            <option>500gm - ₹900</option>
+                            <option>1kg - ₹1800</option>
                         </select>
-                        <input type="number" class="item-qty" value="1" min="1">
-                        <button class="btn-add-cart" onclick="addToCart(this)"><i class="ri-shopping-cart-add-line"></i> Add</button>
+                        <input type="number" value="1" min="1">
+                        <button class="btn-add-cart">Add</button>
                     </div>
                 </div>
             </div>
 
-            <!-- VEG PICKLES -->
-            <h3 class="menu-category-title"><i class="ri-plant-line"></i> Veg Pickles</h3>
+            <!-- Veg Pickles -->
+            <h3 class="menu-category-title">🥦 Veg Pickles</h3>
             <div class="menu-items-grid">
-                <div class="menu-item-card" data-name="Tomato Pickle" data-price-250="149" data-price-500="299" data-price-1000="550">
+                <div class="menu-item-card">
                     <div class="menu-item-info">
                         <h4>Tomato Pickle</h4>
                         <p class="text-muted">Sun-ripened tomatoes blended with traditional spices.</p>
                     </div>
                     <div class="menu-item-controls">
-                        <select class="item-size">
-                            <option value="250gm">250gm - ₹149</option>
-                            <option value="500gm">500gm - ₹299</option>
-                            <option value="1kg">1kg - ₹550</option>
+                        <select>
+                            <option>250gm - ₹149</option>
+                            <option>500gm - ₹299</option>
+                            <option>1kg - ₹550</option>
                         </select>
-                        <input type="number" class="item-qty" value="1" min="1">
-                        <button class="btn-add-cart" onclick="addToCart(this)"><i class="ri-shopping-cart-add-line"></i> Add</button>
+                        <input type="number" value="1" min="1">
+                        <button class="btn-add-cart">Add</button>
                     </div>
                 </div>
-
-                <div class="menu-item-card" data-name="Gongura Pickle" data-price-250="149" data-price-500="299" data-price-1000="550">
+                <div class="menu-item-card">
                     <div class="menu-item-info">
                         <h4>Gongura Pickle</h4>
                         <p class="text-muted">Traditional tangy sorrel leaf pickle.</p>
                     </div>
                     <div class="menu-item-controls">
-                        <select class="item-size">
-                            <option value="250gm">250gm - ₹149</option>
-                            <option value="500gm">500gm - ₹299</option>
-                            <option value="1kg">1kg - ₹550</option>
+                        <select>
+                            <option>250gm - ₹149</option>
+                            <option>500gm - ₹299</option>
+                            <option>1kg - ₹550</option>
                         </select>
-                        <input type="number" class="item-qty" value="1" min="1">
-                        <button class="btn-add-cart" onclick="addToCart(this)"><i class="ri-shopping-cart-add-line"></i> Add</button>
+                        <input type="number" value="1" min="1">
+                        <button class="btn-add-cart">Add</button>
                     </div>
                 </div>
             </div>
 
-            <!-- SAVOURY & POWDERS & SWEETS -->
-            <h3 class="menu-category-title"><i class="ri-cake-3-line"></i> Savory, Powders & Sweets</h3>
+            <!-- Savory, Powders & Sweets -->
+            <h3 class="menu-category-title">🍿 Savory, Powders & Sweets</h3>
             <div class="menu-items-grid">
-                <div class="menu-item-card" data-name="Kaju Masala" data-price-250="300" data-price-500="600" data-price-1000="1200">
+                <div class="menu-item-card">
                     <div class="menu-item-info">
                         <h4>Kaju Masala</h4>
                         <p class="text-muted">Crunchy cashews roasted with special masala.</p>
                     </div>
                     <div class="menu-item-controls">
-                        <select class="item-size">
-                            <option value="250gm">250gm - ₹300</option>
-                            <option value="500gm">500gm - ₹600</option>
-                            <option value="1kg">1kg - ₹1200</option>
+                        <select>
+                            <option>250gm - ₹300</option>
+                            <option>500gm - ₹600</option>
+                            <option>1kg - ₹1200</option>
                         </select>
-                        <input type="number" class="item-qty" value="1" min="1">
-                        <button class="btn-add-cart" onclick="addToCart(this)"><i class="ri-shopping-cart-add-line"></i> Add</button>
+                        <input type="number" value="1" min="1">
+                        <button class="btn-add-cart">Add</button>
                     </div>
                 </div>
-
-                <div class="menu-item-card" data-name="Masala Peanuts" data-price-250="125" data-price-500="249" data-price-1000="499">
+                <div class="menu-item-card">
                     <div class="menu-item-info">
                         <h4>Masala Peanuts</h4>
                         <p class="text-muted">Crispy protein-rich spiced peanuts.</p>
                     </div>
                     <div class="menu-item-controls">
-                        <select class="item-size">
-                            <option value="250gm">250gm - ₹125</option>
-                            <option value="500gm">500gm - ₹249</option>
-                            <option value="1kg">1kg - ₹499</option>
+                        <select>
+                            <option>250gm - ₹125</option>
+                            <option>500gm - ₹249</option>
+                            <option>1kg - ₹499</option>
                         </select>
-                        <input type="number" class="item-qty" value="1" min="1">
-                        <button class="btn-add-cart" onclick="addToCart(this)"><i class="ri-shopping-cart-add-line"></i> Add</button>
+                        <input type="number" value="1" min="1">
+                        <button class="btn-add-cart">Add</button>
                     </div>
                 </div>
-
-                <div class="menu-item-card" data-name="Flavoured Makhana" data-price-250="249" data-price-500="499" data-price-1000="1000">
+                <div class="menu-item-card">
                     <div class="menu-item-info">
                         <h4>Flavoured Makhana</h4>
                         <p class="text-muted">Healthy roasted foxnuts with premium seasoning.</p>
                     </div>
                     <div class="menu-item-controls">
-                        <select class="item-size">
-                            <option value="250gm">250gm - ₹249</option>
-                            <option value="500gm">500gm - ₹499</option>
-                            <option value="1kg">1kg - ₹1000</option>
+                        <select>
+                            <option>250gm - ₹249</option>
+                            <option>500gm - ₹499</option>
+                            <option>1kg - ₹1000</option>
                         </select>
-                        <input type="number" class="item-qty" value="1" min="1">
-                        <button class="btn-add-cart" onclick="addToCart(this)"><i class="ri-shopping-cart-add-line"></i> Add</button>
+                        <input type="number" value="1" min="1">
+                        <button class="btn-add-cart">Add</button>
                     </div>
                 </div>
-
-                <div class="menu-item-card" data-name="Sunundalu" data-price-500="449" data-price-1000="849">
+                <div class="menu-item-card">
                     <div class="menu-item-info">
                         <h4>Sunundalu</h4>
                         <p class="text-muted">Traditional nutrient-packed urad dal & jaggery laddoos.</p>
                     </div>
                     <div class="menu-item-controls">
-                        <select class="item-size">
-                            <option value="500gm">500gm - ₹449</option>
-                            <option value="1kg">1kg - ₹849</option>
+                        <select>
+                            <option>500gm - ₹449</option>
+                            <option>1kg - ₹849</option>
                         </select>
-                        <input type="number" class="item-qty" value="1" min="1">
-                        <button class="btn-add-cart" onclick="addToCart(this)"><i class="ri-shopping-cart-add-line"></i> Add</button>
+                        <input type="number" value="1" min="1">
+                        <button class="btn-add-cart">Add</button>
                     </div>
                 </div>
-
-                <div class="menu-item-card" data-name="Ragi Dryfruit Laddu" data-price-500="449" data-price-1000="849">
+                <div class="menu-item-card">
                     <div class="menu-item-info">
                         <h4>Ragi Dryfruit Laddu</h4>
                         <p class="text-muted">Healthy ragi power laddoos loaded with dry fruits.</p>
                     </div>
                     <div class="menu-item-controls">
-                        <select class="item-size">
-                            <option value="500gm">500gm - ₹449</option>
-                            <option value="1kg">1kg - ₹849</option>
+                        <select>
+                            <option>500gm - ₹449</option>
+                            <option>1kg - ₹849</option>
                         </select>
-                        <input type="number" class="item-qty" value="1" min="1">
-                        <button class="btn-add-cart" onclick="addToCart(this)"><i class="ri-shopping-cart-add-line"></i> Add</button>
+                        <input type="number" value="1" min="1">
+                        <button class="btn-add-cart">Add</button>
                     </div>
                 </div>
-
-                <div class="menu-item-card" data-name="Bellam Gavvalu" data-price-500="225" data-price-1000="449">
+                <div class="menu-item-card">
                     <div class="menu-item-info">
                         <h4>Bellam Gavvalu</h4>
                         <p class="text-muted">Sweet jaggery-coated crispy shell snack.</p>
                     </div>
                     <div class="menu-item-controls">
-                        <select class="item-size">
-                            <option value="500gm">500gm - ₹225</option>
-                            <option value="1kg">1kg - ₹449</option>
+                        <select>
+                            <option>500gm - ₹225</option>
+                            <option>1kg - ₹449</option>
                         </select>
-                        <input type="number" class="item-qty" value="1" min="1">
-                        <button class="btn-add-cart" onclick="addToCart(this)"><i class="ri-shopping-cart-add-line"></i> Add</button>
+                        <input type="number" value="1" min="1">
+                        <button class="btn-add-cart">Add</button>
                     </div>
                 </div>
-
-                <div class="menu-item-card" data-name="Flaxseed Powder" data-price-250="185">
+                <div class="menu-item-card">
                     <div class="menu-item-info">
                         <h4>Flaxseed Powder (Podulu)</h4>
-                        <p class="text-muted">250gm - ₹185. Omega-3 rich health powder.</p>
+                        <p class="text-muted">Omega-3 rich health powder.</p>
                     </div>
                     <div class="menu-item-controls">
-                        <select class="item-size">
-                            <option value="250gm">250gm - ₹185</option>
+                        <select>
+                            <option>250gm - ₹185</option>
                         </select>
-                        <input type="number" class="item-qty" value="1" min="1">
-                        <button class="btn-add-cart" onclick="addToCart(this)"><i class="ri-shopping-cart-add-line"></i> Add</button>
+                        <input type="number" value="1" min="1">
+                        <button class="btn-add-cart">Add</button>
                     </div>
                 </div>
-
-                <div class="menu-item-card" data-name="Idli Karam" data-price-250="115">
+                <div class="menu-item-card">
                     <div class="menu-item-info">
                         <h4>Idli Karam (Podulu)</h4>
-                        <p class="text-muted">250gm - ₹115. Flavorful accompaniment for breakfast.</p>
+                        <p class="text-muted">Flavorful accompaniment for breakfast.</p>
                     </div>
                     <div class="menu-item-controls">
-                        <select class="item-size">
-                            <option value="250gm">250gm - ₹115</option>
+                        <select>
+                            <option>250gm - ₹115</option>
                         </select>
-                        <input type="number" class="item-qty" value="1" min="1">
-                        <button class="btn-add-cart" onclick="addToCart(this)"><i class="ri-shopping-cart-add-line"></i> Add</button>
+                        <input type="number" value="1" min="1">
+                        <button class="btn-add-cart">Add</button>
                     </div>
                 </div>
-
-                <div class="menu-item-card" data-name="Munagaku Karam" data-price-250="185">
+                <div class="menu-item-card">
                     <div class="menu-item-info">
                         <h4>Munagaku Karam (Podulu)</h4>
-                        <p class="text-muted">250gm - ₹185. Nutritious Moringa leaf powder.</p>
+                        <p class="text-muted">Nutritious Moringa leaf powder.</p>
                     </div>
                     <div class="menu-item-controls">
-                        <select class="item-size">
-                            <option value="250gm">250gm - ₹185</option>
+                        <select>
+                            <option>250gm - ₹185</option>
                         </select>
-                        <input type="number" class="item-qty" value="1" min="1">
-                        <button class="btn-add-cart" onclick="addToCart(this)"><i class="ri-shopping-cart-add-line"></i> Add</button>
+                        <input type="number" value="1" min="1">
+                        <button class="btn-add-cart">Add</button>
                     </div>
                 </div>
-
-                <div class="menu-item-card" data-name="Pocu'/Hhdu" data-price-250="90">
+                <div class="menu-item-card">
                     <div class="menu-item-info">
                         <h4>Pocu'/Hhdu</h4>
-                        <p class="text-muted">Speciality health snack - ₹90.</p>
+                        <p class="text-muted">Speciality health snack.</p>
                     </div>
                     <div class="menu-item-controls">
-                        <select class="item-size">
-                            <option value="Standard">Standard - ₹90</option>
+                        <select>
+                            <option>Standard - ₹90</option>
                         </select>
-                        <input type="number" class="item-qty" value="1" min="1">
-                        <button class="btn-add-cart" onclick="addToCart(this)"><i class="ri-shopping-cart-add-line"></i> Add</button>
+                        <input type="number" value="1" min="1">
+                        <button class="btn-add-cart">Add</button>
                     </div>
                 </div>
-
-                <div class="menu-item-card" data-name="Gomar Ragi" data-price-250="40">
+                <div class="menu-item-card">
                     <div class="menu-item-info">
                         <h4>Gomar Ragi</h4>
-                        <p class="text-muted">Nutritious ragi snack - ₹40.</p>
+                        <p class="text-muted">Nutritious ragi snack.</p>
                     </div>
                     <div class="menu-item-controls">
-                        <select class="item-size">
-                            <option value="Standard">Standard - ₹40</option>
+                        <select>
+                            <option>Standard - ₹40</option>
                         </select>
-                        <input type="number" class="item-qty" value="1" min="1">
-                        <button class="btn-add-cart" onclick="addToCart(this)"><i class="ri-shopping-cart-add-line"></i> Add</button>
+                        <input type="number" value="1" min="1">
+                        <button class="btn-add-cart">Add</button>
                     </div>
                 </div>
-
-                <div class="menu-item-card" data-name="Chocochip Muffins" data-price-1="30" data-price-4="99">
+                <div class="menu-item-card">
                     <div class="menu-item-info">
                         <h4>Chocochip Muffins (Wheat, Ragi, Jowar)</h4>
-                        <p class="text-muted">1 piece - ₹30 | 4 pieces - ₹99.</p>
+                        <p class="text-muted">Healthy wholesome customized flour base muffins.</p>
                     </div>
                     <div class="menu-item-controls">
-                        <select class="item-size">
-                            <option value="1 piece">1 piece - ₹30</option>
-                            <option value="4 pieces">4 pieces - ₹99</option>
+                        <select>
+                            <option>1 piece - ₹30</option>
+                            <option>4 pieces - ₹99</option>
                         </select>
-                        <input type="number" class="item-qty" value="1" min="1">
-                        <button class="btn-add-cart" onclick="addToCart(this)"><i class="ri-shopping-cart-add-line"></i> Add</button>
+                        <input type="number" value="1" min="1">
+                        <button class="btn-add-cart">Add</button>
                     </div>
                 </div>
-
-                <div class="menu-item-card" data-name="Jowar/Ragi Chocochip Cookies" data-price-250="249" data-price-500="449">
+                <div class="menu-item-card">
                     <div class="menu-item-info">
                         <h4>Jowar/Ragi Chocochip Cookies</h4>
                         <p class="text-muted">Healthy millets baked with chocolate chips.</p>
                     </div>
                     <div class="menu-item-controls">
-                        <select class="item-size">
-                            <option value="250gm">250gm - ₹249</option>
-                            <option value="500gm">500gm - ₹449</option>
+                        <select>
+                            <option>250gm - ₹249</option>
+                            <option>500gm - ₹449</option>
                         </select>
-                        <input type="number" class="item-qty" value="1" min="1">
-                        <button class="btn-add-cart" onclick="addToCart(this)"><i class="ri-shopping-cart-add-line"></i> Add</button>
+                        <input type="number" value="1" min="1">
+                        <button class="btn-add-cart">Add</button>
                     </div>
                 </div>
-
-                <div class="menu-item-card" data-name="Jowar/Ragi Almond Cookies" data-price-250="259" data-price-500="499">
+                <div class="menu-item-card">
                     <div class="menu-item-info">
                         <h4>Jowar/Ragi Almond Cookies</h4>
                         <p class="text-muted">Nutritious almond-infused millet cookies.</p>
                     </div>
                     <div class="menu-item-controls">
-                        <select class="item-size">
-                            <option value="250gm">250gm - ₹259</option>
-                            <option value="500gm">500gm - ₹499</option>
+                        <select>
+                            <option>250gm - ₹259</option>
+                            <option>500gm - ₹499</option>
                         </select>
-                        <input type="number" class="item-qty" value="1" min="1">
-                        <button class="btn-add-cart" onclick="addToCart(this)"><i class="ri-shopping-cart-add-line"></i> Add</button>
+                        <input type="number" value="1" min="1">
+                        <button class="btn-add-cart">Add</button>
                     </div>
                 </div>
-
-                <div class="menu-item-card" data-name="Jowar/Ragi Double Chocochip Cookies" data-price-250="259" data-price-500="499">
+                <div class="menu-item-card">
                     <div class="menu-item-info">
                         <h4>Jowar/Ragi Double Chocochip</h4>
                         <p class="text-muted">Rich double chocolate millet cookies.</p>
                     </div>
                     <div class="menu-item-controls">
-                        <select class="item-size">
-                            <option value="250gm">250gm - ₹259</option>
-                            <option value="500gm">500gm - ₹499</option>
+                        <select>
+                            <option>250gm - ₹259</option>
+                            <option>500gm - ₹499</option>
                         </select>
-                        <input type="number" class="item-qty" value="1" min="1">
-                        <button class="btn-add-cart" onclick="addToCart(this)"><i class="ri-shopping-cart-add-line"></i> Add</button>
+                        <input type="number" value="1" min="1">
+                        <button class="btn-add-cart">Add</button>
                     </div>
                 </div>
-
-                <div class="menu-item-card" data-name="Jowar Ragi Plain Cookies" data-price-250="169" data-price-500="349">
+                <div class="menu-item-card">
                     <div class="menu-item-info">
                         <h4>Jowar Ragi Plain Cookies</h4>
                         <p class="text-muted">Classic wholesome plain millet cookies.</p>
                     </div>
                     <div class="menu-item-controls">
-                        <select class="item-size">
-                            <option value="250gm">250gm - ₹169</option>
-                            <option value="500gm">500gm - ₹349</option>
+                        <select>
+                            <option>250gm - ₹169</option>
+                            <option>500gm - ₹349</option>
                         </select>
-                        <input type="number" class="item-qty" value="1" min="1">
-                        <button class="btn-add-cart" onclick="addToCart(this)"><i class="ri-shopping-cart-add-line"></i> Add</button>
+                        <input type="number" value="1" min="1">
+                        <button class="btn-add-cart">Add</button>
                     </div>
                 </div>
-
-                <div class="menu-item-card" data-name="Ragi Chocochip Cookies" data-price-250="249" data-price-500="449">
+                <div class="menu-item-card">
                     <div class="menu-item-info">
                         <h4>Ragi Chocochip Cookies</h4>
                         <p class="text-muted">Nutritious ragi cookies with chocochips.</p>
                     </div>
                     <div class="menu-item-controls">
-                        <select class="item-size">
-                            <option value="250gm">250gm - ₹249</option>
-                            <option value="500gm">500gm - ₹449</option>
+                        <select>
+                            <option>250gm - ₹249</option>
+                            <option>500gm - ₹449</option>
                         </select>
-                        <input type="number" class="item-qty" value="1" min="1">
-                        <button class="btn-add-cart" onclick="addToCart(this)"><i class="ri-shopping-cart-add-line"></i> Add</button>
+                        <input type="number" value="1" min="1">
+                        <button class="btn-add-cart">Add</button>
                     </div>
                 </div>
-
-                <div class="menu-item-card" data-name="Nutrimarc Special Cake Tin" data-price-1="159">
+                <div class="menu-item-card">
                     <div class="menu-item-info">
                         <h4>Nutrimarc Special Cake Tin (Healthy Chocolate Cake)</h4>
-                        <p class="text-muted">Delicious healthy chocolate cake tin - ₹159.</p>
+                        <p class="text-muted">Delicious healthy chocolate cake tin.</p>
                     </div>
                     <div class="menu-item-controls">
-                        <select class="item-size">
-                            <option value="1 Tin">1 Tin - ₹159</option>
+                        <select>
+                            <option>1 Tin - ₹159</option>
                         </select>
-                        <input type="number" class="item-qty" value="1" min="1">
-                        <button class="btn-add-cart" onclick="addToCart(this)"><i class="ri-shopping-cart-add-line"></i> Add</button>
+                        <input type="number" value="1" min="1">
+                        <button class="btn-add-cart">Add</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Floating Cart Bar -->
-    <div id="cart-drawer-floating" class="cart-drawer-floating" style="display: none;">
-        <div>
-            <i class="ri-shopping-bag-3-line"></i> Cart: <span id="cart-count" class="cart-count-badge">0</span> items
-        </div>
-        <button class="btn-view-cart" onclick="openCheckoutModal()">Proceed to Order</button>
+    <!-- FLOATING CART BAR -->
+    <div class="cart-drawer-floating">
+        <div>Cart: <span class="cart-count-badge">0</span> items</div>
+        <button class="btn-view-cart">Proceed to Order</button>
     </div>
 
-    <!-- Checkout Modal -->
-    <div id="checkout-modal" class="checkout-modal">
-        <div class="checkout-card">
-            <button class="btn-close-checkout" onclick="closeCheckoutModal()">&times;</button>
-            <h3>Complete Your NHFS Food Order</h3>
-            <p class="text-muted" style="margin-bottom: 1rem;">Review your selected items and provide delivery details.</p>
-            <div id="cart-items-list" class="cart-items-list"></div>
-            <div style="font-weight: 700; font-size: 1.1rem; margin-bottom: 1.5rem;">
-                Total Amount: ₹<span id="cart-total-amount">0</span>
-            </div>
-            <form onsubmit="handleFoodOrderSubmit(event)">
-                <div class="form-group">
-                    <label>Full Name *</label>
-                    <input type="text" id="orderName" required placeholder="Enter your name">
-                </div>
-                <div class="form-group">
-                    <label>Phone Number *</label>
-                    <input type="tel" id="orderPhone" required placeholder="+91 9876543210">
-                </div>
-                <div class="form-group">
-                    <label>Delivery Address (Bachupally / Hyderabad) *</label>
-                    <textarea id="orderAddress" rows="3" required placeholder="House No, Street, Landmark..."></textarea>
-                </div>
-                <button type="submit" class="btn-submit">Place Order via WhatsApp / System <i class="ri-whatsapp-line"></i></button>
-            </form>
-        </div>
-    </div>
-
-    <!-- SECTION: ADVANCED INTELLIGENT SYSTEMS (NAIS) -->
-    <section id="technology" class="pillar-section tech-theme">
+    <!-- 6. NAIS SECTION -->
+    <section id="nais" class="section tech-theme">
         <div class="container">
-            <div class="pillar-header">
-                <span class="pillar-tag tag-blue"><i class="ri-terminal-box-fill"></i> DIVISION 02</span>
+            <div class="section-title">
+                <span class="category-badge">DIVISION 02</span>
                 <h2 class="text-white">NutriMarc Advanced Intelligent Systems (NAIS)</h2>
                 <p class="text-muted">Empowering modern organizations with IT Consulting, high-tech training, digital marketing, and elite staffing.</p>
             </div>
 
             <div class="cards-grid grid-2">
                 <div class="glass-card card-tech">
-                    <div class="icon-box icon-blue"><i class="ri-lightbulb-line"></i></div>
-                    <h3>1. IT Consulting</h3>
-                    <p>Expert consulting in Multi Cloud Architectures, Thought Leadership, Cloud Transformation, Generative AI, and Agentic AI.</p>
+                    <div class="icon-box icon-blue">💡</div>
+                    <h3 class="text-white">1. IT Consulting</h3>
+                    <p class="text-muted">Expert consulting in Multi Cloud Architectures, Thought Leadership, Cloud Transformation, Generative AI, and Agentic AI.</p>
                     <div class="stack-tags">
-                        <span>Multi-Cloud</span>
-                        <span>Generative AI</span>
-                        <span>Agentic AI</span>
+                        <span>Multi-Cloud</span><span>Generative AI</span><span>Agentic AI</span>
                     </div>
                 </div>
-
                 <div class="glass-card card-tech">
-                    <div class="icon-box icon-blue"><i class="ri-graduation-cap-line"></i></div>
-                    <h3>2. Specialized Training</h3>
-                    <p>Training on top-notch technologies such as AI/ML, Generative AI, Agentic Quantum Computing, Blockchain, and more.</p>
+                    <div class="icon-box icon-blue">🎓</div>
+                    <h3 class="text-white">2. Specialized Training</h3>
+                    <p class="text-muted">Training on top-notch technologies such as AI/ML, Generative AI, Agentic Quantum Computing, Blockchain, and more.</p>
                     <div class="stack-tags">
-                        <span>Quantum Computing</span>
-                        <span>Blockchain</span>
-                        <span>AI / ML</span>
+                        <span>Quantum Computing</span><span>Blockchain</span><span>AI / ML</span>
                     </div>
                 </div>
-
                 <div class="glass-card card-tech">
-                    <div class="icon-box icon-blue"><i class="ri-line-chart-line"></i></div>
-                    <h3>3. Digital Marketing</h3>
-                    <p>Data-driven growth marketing, predictive customer analytics, search engineering, and brand visibility campaigns.</p>
+                    <div class="icon-box icon-blue">📈</div>
+                    <h3 class="text-white">3. Digital Marketing</h3>
+                    <p class="text-muted">Data-driven growth marketing, predictive customer analytics, search engineering, and brand visibility campaigns.</p>
                     <div class="stack-tags">
-                        <span>SEO & Growth</span>
-                        <span>Predictive Analytics</span>
+                        <span>SEO & Growth</span><span>Predictive Analytics</span>
                     </div>
                 </div>
-
                 <div class="glass-card card-tech">
-                    <div class="icon-box icon-blue"><i class="ri-user-star-line"></i></div>
-                    <h3>4. IT Staffing</h3>
-                    <p>Deploying vetted top-tier talent in software engineering, AI research, cloud architecture, and system integration.</p>
+                    <div class="icon-box icon-blue">👥</div>
+                    <h3 class="text-white">4. IT Staffing</h3>
+                    <p class="text-muted">Deploying vetted top-tier talent in software engineering, AI research, cloud architecture, and system integration.</p>
                     <div class="stack-tags">
-                        <span>Tech Talent</span>
-                        <span>Cloud Engineers</span>
+                        <span>Tech Talent</span><span>Cloud Engineers</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Training Schedule Sub-block -->
+            <!-- TRAINING SUB-BLOCKS -->
             <div class="training-subblock">
                 <div class="subblock-header">
-                    <h3><i class="ri-calendar-event-line"></i> Upcoming NAIS Training Batches</h3>
+                    <h3><i>📅</i> Upcoming NAIS Training Batches</h3>
                     <p>Enroll in cutting-edge technology cohorts led by senior industry architects.</p>
                 </div>
                 <div class="schedule-table-wrapper">
@@ -674,83 +616,78 @@
         </div>
     </section>
 
-    <!-- SECTION: ENQUIRY / SERVICE REQUEST FORM -->
+    <!-- 7. ENQUIRY FORM SECTION -->
     <section id="enquiry" class="section enquiry-section">
         <div class="container">
-            <div class="section-title">
-                <span class="category-badge">SERVICE REQUEST & ENQUIRY</span>
-                <h2>Submit Your Request to NutriMarc</h2>
-                <p>Whether you need NAIS IT Consulting, Training, Staffing, Digital Marketing, or NHFS food orders, drop your requirements below.</p>
-            </div>
-
             <div class="enquiry-card">
-                <form id="enquiry-form" onsubmit="handleEnquirySubmit(event)">
+                <div class="section-title" style="margin-bottom: 2rem;">
+                    <span class="category-badge">SERVICE REQUEST & ENQUIRY</span>
+                    <h2>Submit Your Request to NutriMarc</h2>
+                    <p>Whether you need NAIS IT Consulting, Training, Staffing, Digital Marketing, or NHFS food orders, drop your requirements below.</p>
+                </div>
+                <form>
                     <div class="form-grid">
                         <div class="form-group">
-                            <label for="fullName">Full Name *</label>
-                            <input type="text" id="fullName" required placeholder="John Doe">
+                            <label>Full Name *</label>
+                            <input type="text" required placeholder="John Doe">
                         </div>
                         <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" required placeholder="john@example.com">
+                            <label>Email Address *</label>
+                            <input type="email" required placeholder="john@example.com">
                         </div>
                         <div class="form-group">
-                            <label for="phone">Phone Number *</label>
-                            <input type="tel" id="phone" required placeholder="+91 9876543210">
+                            <label>Phone Number *</label>
+                            <input type="tel" required placeholder="+91 XXXX XXX XXX">
                         </div>
                         <div class="form-group">
-                            <label for="category">Select Division / Service *</label>
-                            <select id="category" required>
+                            <label>Select Division / Service *</label>
+                            <select required>
                                 <option value="" disabled selected>Select Service...</option>
-                                <option value="NHFS - Healthy Food Orders">NHFS - Healthy Food Orders</option>
-                                <option value="NAIS - IT Consulting (Multi-Cloud / AI)">NAIS - IT Consulting</option>
-                                <option value="NAIS - Training (GenAI, Quantum, Blockchain)">NAIS - Training</option>
-                                <option value="NAIS - Digital Marketing">NAIS - Digital Marketing</option>
-                                <option value="NAIS - IT Staffing">NAIS - IT Staffing</option>
+                                <option>NHFS - Healthy Food Orders</option>
+                                <option>NAIS - IT Consulting</option>
+                                <option>NAIS - Training</option>
+                                <option>NAIS - Digital Marketing</option>
+                                <option>NAIS - IT Staffing</option>
                             </select>
                         </div>
+                        <div class="form-group full-width">
+                            <label>Your Requirements / Message *</label>
+                            <textarea rows="4" required placeholder="Describe your order or project scope..."></textarea>
+                        </div>
                     </div>
-                    <div class="form-group full-width">
-                        <label for="message">Your Requirements / Message *</label>
-                        <textarea id="message" rows="5" required placeholder="Provide details about your project, training interest, or food order..."></textarea>
+                    <div style="text-align: center; margin-top: 1rem;">
+                        <button type="submit" class="btn-submit">Submit Request ➔</button>
                     </div>
-                    <button type="submit" class="btn-submit">Submit Request <i class="ri-send-plane-fill"></i></button>
                 </form>
-                <div id="enquiry-result" class="enquiry-result" style="display: none; margin-top: 1rem; padding: 1rem; background: #e6fffa; border-radius: 8px; color: #047857; font-weight: 700;"></div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer id="contact">
+    <!-- FOOTER -->
+    <footer>
         <div class="container footer-grid">
-            <div class="footer-brand">
-                <div class="logo-text light">
-                    <span class="logo-bold">NUTRI</span><span class="logo-accent">MARC</span>
-                </div>
-                <p>Bridging pure organic home foods with Advanced Intelligent Systems.</p>
-                <br>
-                <div class="address-box">
-                    <h4><i class="ri-map-pin-2-fill"></i> Address</h4>
-                    <p>Mallampet, Bachupally<br>Hyderabad, Telangana, India</p>
-                </div>
+            <div class="footer-col">
+                <span class="logo-bold" style="color:white;">NUTRI</span><span class="logo-accent">MARC</span>
+                <p style="margin-top: 1rem; font-size: 0.9rem;">Bridging pure organic home foods with Advanced Intelligent Systems.</p>
             </div>
-
+            <div class="footer-col">
+                <h4>Address</h4>
+                <p>Mallampet, Bachupally<br>Hyderabad, Telangana, India</p>
+            </div>
             <div class="footer-col">
                 <h4>Divisions</h4>
-                <a href="#foods">a) NutriMarc Healthy Food Services (NHFS)</a>
-                <a href="#technology">b) NutriMarc Advanced Intelligent Systems (NAIS)</a>
+                <a href="#nhfs">a) NutriMarc Healthy Food Services (NHFS)</a>
+                <a href="#nais">b) NutriMarc Advanced Intelligent Systems (NAIS)</a>
                 <a href="#enquiry">Submit Request</a>
             </div>
-
             <div class="footer-col">
                 <h4>Direct Contact</h4>
                 <ul class="contact-list">
-                    <li><a href="https://wa.me/918919394401" target="_blank"><i class="ri-whatsapp-fill icon-wa"></i> WhatsApp: +91-8919394401</a></li>
-                    <li><a href="tel:+918919394401"><i class="ri-phone-fill icon-phone"></i> Call: +91-8919394401</a></li>
-                    <li><a href="mailto:contact@nutrimarc.com"><i class="ri-mail-fill icon-mail"></i> contact@nutrimarc.com</a></li>
-                    <li><a href="https://www.instagram.com/NutrimarcOfficial" target="_blank"><i class="ri-instagram-fill icon-ig"></i> Instagram: NutrimarcOfficial</a></li>
-                    <li><a href="https://www.youtube.com/@NutrimarcOfficial" target="_blank"><i class="ri-youtube-fill icon-yt"></i> YouTube: NutrimarcOfficial</a></li>
+                    <li><a href="https://wa.me/918919394401"><i class="icon-wa">💬</i> WhatsApp: +91-8919394401</a></li>
+                    <li><a href="tel:+918919394401"><i class="icon-phone">📞</i> Call: +91-8919394401</a></li>
+                    <li><a href="mailto:contact@nutrimarc.com"><i class="icon-mail">✉️</i> contact@nutrimarc.com</a></li>
+                    <li><a href="#"><i class="icon-ig">📸</i> Instagram: NutrimarcOfficial</a></li>
+                    <li><a href="#"><i class="icon-yt">📺</i> YouTube: NutrimarcOfficial</a></li>
                 </ul>
             </div>
         </div>
@@ -759,6 +696,5 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
