@@ -481,3 +481,25 @@ function initCounters() {
   }), {threshold:0.5});
   counters.forEach(counter => observer.observe(counter));
 }
+
+
+/* V7 premium interaction layer */
+function initLuxuryInteractions(){
+  try{
+    const targets=document.querySelectorAll('.unit-section,.product-card,.bootcamp-option,.csr-card,.service-card,.feature-card');
+    targets.forEach((el,i)=>{el.classList.add('reveal-ready'); if(i%4===1) el.classList.add('reveal-delay-1'); else if(i%4===2) el.classList.add('reveal-delay-2'); else if(i%4===3) el.classList.add('reveal-delay-3');});
+    if('IntersectionObserver' in window){
+      const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('revealed');io.unobserve(e.target)}}),{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+      document.querySelectorAll('.reveal-ready').forEach(el=>io.observe(el));
+    }else document.querySelectorAll('.reveal-ready').forEach(el=>el.classList.add('revealed'));
+
+    // Subtle pointer spotlight on desktop; disabled for touch/reduced motion.
+    if(window.matchMedia && window.matchMedia('(pointer:fine)').matches && !window.matchMedia('(prefers-reduced-motion:reduce)').matches){
+      let raf=0,lastX=0,lastY=0;
+      document.addEventListener('pointermove',e=>{lastX=e.clientX;lastY=e.clientY;if(raf)return;raf=requestAnimationFrame(()=>{document.documentElement.style.setProperty('--mx',lastX+'px');document.documentElement.style.setProperty('--my',lastY+'px');raf=0;});},{passive:true});
+      const style=document.createElement('style'); style.textContent='.product-card,.bento-card,.csr-card{position:relative;overflow:hidden}.product-card:before,.bento-card:before,.csr-card:before{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--mx) var(--my),rgba(168,240,203,.13),transparent 58%);pointer-events:none;opacity:.75}'; document.head.appendChild(style);
+    }
+  }catch(err){console.warn('Luxury interactions skipped:',err)}
+}
+if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',initLuxuryInteractions); else initLuxuryInteractions();
+
