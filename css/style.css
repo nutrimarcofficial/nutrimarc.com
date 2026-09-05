@@ -485,3 +485,137 @@ footer {
 .footer-bottom p {
     margin-bottom: 8px;
 }
+
+
+/* Corporate Social Responsibility (CSR) */
+.csr-section {
+    background:
+        radial-gradient(circle at 100% 0%, rgba(16,185,129,0.10), transparent 35%),
+        radial-gradient(circle at 0% 100%, rgba(14,165,233,0.08), transparent 35%),
+        #ffffff;
+    border: 1px solid rgba(16,185,129,0.18);
+}
+
+.csr-header {
+    max-width: 900px;
+}
+
+.csr-kicker {
+    display: inline-block;
+    margin-bottom: 8px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: #ecfdf5;
+    color: #047857;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.csr-title {
+    color: #047857;
+    border-bottom: 3px solid #10b981;
+    margin-bottom: 18px;
+}
+
+.csr-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.csr-card {
+    padding: 30px;
+    border-radius: 16px;
+    background: linear-gradient(145deg, #ffffff, #f8fafc);
+    border: 1px solid #dbeafe;
+    box-shadow: 0 8px 25px rgba(15,23,42,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.csr-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(15,23,42,0.09);
+}
+
+.csr-icon {
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #ecfdf5;
+    font-size: 1.75rem;
+    margin-bottom: 16px;
+}
+
+.csr-card h3 {
+    color: var(--dark);
+    font-size: 1.35rem;
+    margin-bottom: 12px;
+}
+
+.csr-card p,
+.csr-impact p {
+    color: var(--gray);
+    margin-bottom: 13px;
+}
+
+.csr-impact {
+    margin-top: 28px;
+    padding: 30px;
+    border-radius: 16px;
+    background: #f8fafc;
+    border-left: 5px solid var(--primary);
+}
+
+.csr-impact h3 {
+    color: var(--dark);
+    margin-bottom: 12px;
+    font-size: 1.4rem;
+}
+
+.csr-quote {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 22px;
+    padding: 18px 20px;
+    border-radius: 12px;
+    background: #ffffff;
+    border: 1px solid #d1fae5;
+}
+
+.csr-quote span {
+    font-size: 3rem;
+    line-height: 1;
+    color: var(--primary);
+    font-family: Georgia, serif;
+}
+
+.csr-quote p {
+    margin: 0;
+    color: #065f46;
+}
+
+.csr-note {
+    margin-top: 20px;
+    padding: 16px 18px;
+    border-radius: 10px;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    color: #334155;
+}
+
+@media(max-width: 768px) {
+    .csr-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .csr-card,
+    .csr-impact {
+        padding: 22px;
+    }
+}
