@@ -41,6 +41,20 @@ footer{margin-top:36px;background:#07110d;color:#d7e4dc}.footer-content{max-widt
 @media(max-width:820px){.nav-container{align-items:flex-start;flex-direction:column;gap:10px;padding:12px 18px}.logo-block{width:100%}nav{width:100%;overflow:auto;padding-bottom:2px}nav ul{width:max-content;flex-wrap:nowrap;justify-content:flex-start}.hero{min-height:auto;padding:88px 20px 72px}.hero h2{font-size:clamp(3.2rem,13vw,5.4rem)}.hero-trust{grid-template-columns:1fr}.hero-trust div{text-align:center}.hero-trust div+div{border-left:0;border-top:1px solid rgba(7,17,13,.08)}.main-container{padding:48px 16px 20px}.unit-section{border-radius:24px;padding:26px 20px}.offer-of-day{grid-template-columns:1fr}.coupon-box{justify-self:stretch;min-width:0}.store-controls{grid-template-columns:1fr}.shop-toolbar{align-items:flex-start;flex-direction:column}.bootcamp-grid,.csr-grid{grid-template-columns:1fr}.footer-content{grid-template-columns:1fr}.footer-column:last-child{grid-column:auto}}
 @media(max-width:620px){.category-products{grid-template-columns:1fr}.food-assurance{grid-template-columns:1fr}.cart-summary-grid{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.form-group-full{grid-column:auto}.product-purchase-row{grid-template-columns:1fr 104px}.checkout-options{flex-direction:column}.hero-buttons{flex-direction:column}.hero-buttons .btn{width:100%}.nais-services-grid,.service-cards,.services-grid{grid-template-columns:1fr}.footer-content{padding-top:40px}.popup-box{padding:24px 18px}.shipping-strip span{flex-basis:100%}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+/* V6 — Atelier / state-of-the-art visual layer */
+.hero{min-height:760px;padding-top:92px;padding-bottom:82px;background:radial-gradient(circle at 72% 42%,rgba(12,107,71,.10),transparent 28%),linear-gradient(135deg,#f9fbf8 0%,#f5f0e3 48%,#edf6f1 100%)}
+.hero-content.hero-split{max-width:1240px;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(420px,.98fr);gap:58px;align-items:center;text-align:left}
+.hero-copy{position:relative;z-index:2}.hero-copy .hero-eyebrow{box-shadow:0 12px 30px rgba(12,107,71,.07)}.hero-copy .hero-eyebrow span{flex:0 0 auto}.hero-copy h2{margin:28px 0 24px;max-width:760px;font-size:clamp(3.4rem,6.5vw,6.5rem);line-height:.91}.hero-copy p{margin:0 0 30px;max-width:690px}.hero-copy .hero-buttons{justify-content:flex-start;margin-bottom:18px}.hero-buttons .btn b{font-size:1rem;opacity:.65;margin-left:6px}.hero-micro{font-size:.76rem;font-weight:760;color:#64736b;letter-spacing:.02em}.micro-dot{display:inline-block;width:7px;height:7px;margin-right:7px;border-radius:50%;background:#18a36c;box-shadow:0 0 0 5px rgba(24,163,108,.10)}
+.hero-bento{display:grid;grid-template-columns:1.12fr .88fr;grid-template-rows:1fr .62fr;gap:14px;min-height:470px;transform:rotate(.3deg)}.bento-card{position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.68);border-radius:26px;background:rgba(255,255,255,.70);backdrop-filter:blur(18px);box-shadow:0 25px 65px rgba(21,44,31,.13);padding:22px;display:flex;flex-direction:column;justify-content:flex-end;transition:transform .35s ease,box-shadow .35s ease}.bento-card:hover{transform:translateY(-7px) rotate(-.3deg);box-shadow:0 35px 85px rgba(21,44,31,.18)}.bento-card:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 85% 12%,rgba(255,255,255,.85),transparent 32%);pointer-events:none}.bento-index{position:absolute;top:17px;left:18px;font-size:.65rem;font-weight:900;letter-spacing:.13em;color:#789087}.bento-card strong{font-size:1.1rem;letter-spacing:-.025em;position:relative}.bento-card small{color:#68776f;position:relative;margin-top:3px}.bento-card a{position:relative;margin-top:13px;color:var(--green);font-size:.78rem;font-weight:850;text-decoration:none}.bento-large{grid-row:1/3;background:linear-gradient(145deg,rgba(236,249,242,.90),rgba(255,255,255,.65));padding:26px}.food-art{position:absolute;inset:36px 18px auto;height:260px;display:flex;align-items:center;justify-content:center;gap:10px}.food-art:before{content:"";position:absolute;width:250px;height:250px;border-radius:50%;background:radial-gradient(circle,rgba(199,154,69,.24),rgba(12,107,71,.05) 52%,transparent 70%)}.food-art i{font-style:normal;display:grid;place-items:center;width:72px;height:72px;border-radius:24px;background:rgba(255,255,255,.78);box-shadow:0 15px 30px rgba(23,57,38,.12);font-size:2rem;transform:translateY(-5px)}.food-art i:nth-child(2){transform:translateY(24px) rotate(5deg);width:92px;height:92px;font-size:2.6rem}.food-art i:nth-child(3){transform:translateY(-15px) rotate(-5deg)}.bento-ai{background:linear-gradient(145deg,#0a2430,#174c63);color:#fff}.bento-ai small{color:#b8d0db}.bento-ai a{color:#bde7f6}.ai-ring{width:115px;height:115px;border-radius:50%;display:grid;place-items:center;margin:0 auto auto;background:radial-gradient(circle,#1d7895 0 25%,transparent 26%),conic-gradient(from 15deg,#7de4c0,#b3e4ff,#d6bd6c,#7de4c0);box-shadow:0 0 0 10px rgba(255,255,255,.04),0 0 55px rgba(84,209,190,.20)}.ai-ring span{width:76px;height:76px;display:grid;place-items:center;border-radius:50%;background:#0a2430;font-weight:900;font-size:1.25rem}.bento-purpose{background:linear-gradient(145deg,#fffaf0,#f4ead2)}.purpose-number{font-size:4.6rem;line-height:.8;font-weight:900;color:#c79a45;margin:7px 0 10px}.bento-contact{background:#0c6b47;color:#fff;justify-content:center}.bento-contact span{font-size:.65rem;letter-spacing:.15em;opacity:.72}.bento-contact strong{font-size:1.05rem;margin-top:6px}.bento-contact small{color:#d2eadc}
+.collection-intro{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:end;padding:0 2px 20px;margin-top:18px;border-bottom:1px solid rgba(7,17,13,.09)}.collection-number{font-size:.66rem;letter-spacing:.16em;font-weight:900;color:var(--gold)}.collection-intro h4{font-size:1.55rem;line-height:1.1;margin:8px 0 0;letter-spacing:-.035em}.collection-intro p{margin:0;color:#68756e;font-size:.87rem;max-width:520px;justify-self:end}
+.product-category{margin-top:34px}.category-heading{padding-bottom:14px}.category-heading h4{font-size:1.5rem;letter-spacing:-.035em}.category-overline{background:#f0f7f3;padding:5px 9px;border-radius:999px}.category-count{background:#f6f7f5;border:1px solid #e4e9e5;padding:7px 10px;border-radius:999px;font-size:.72rem;font-weight:800}.category-products{gap:18px}.product-card{border-radius:26px;box-shadow:0 12px 34px rgba(21,44,31,.07);border:1px solid rgba(7,17,13,.08);background:rgba(255,255,255,.94);overflow:hidden}.product-card:hover{transform:translateY(-7px);box-shadow:0 25px 55px rgba(21,44,31,.13);border-color:rgba(12,107,71,.16)}.product-image-wrap{height:190px;border-radius:0!important;margin:0!important;position:relative;overflow:hidden}.product-image-wrap:before{content:"";position:absolute;width:190px;height:190px;border-radius:50%;right:-35px;top:-50px;background:rgba(255,255,255,.18)}.product-image-wrap:after{content:"";position:absolute;inset:auto 15px 12px;height:1px;background:rgba(255,255,255,.35)}.visual-orb{filter:drop-shadow(0 15px 15px rgba(0,0,0,.13));font-size:4.2rem;z-index:2}.visual-label{z-index:2;font-size:.62rem!important;letter-spacing:.13em!important;text-transform:uppercase;font-weight:900!important;background:rgba(255,255,255,.22)!important;backdrop-filter:blur(8px)}.product-content{padding:20px}.product-content h5{font-size:1.08rem;line-height:1.25}.product-content p{min-height:47px}.product-purchase-row{margin-top:14px}.product-size{border-radius:12px!important}.add-product-btn{border-radius:12px!important}
+.shop-toolbar{margin-top:30px;padding:20px 0}.cart-panel{border-radius:26px;box-shadow:0 25px 70px rgba(21,44,31,.12);border:1px solid rgba(7,17,13,.08)}
+.nais-spotlight{display:grid;grid-template-columns:auto 1fr auto;gap:15px;align-items:center;margin:28px 0;padding:18px 20px;border-radius:18px;background:linear-gradient(90deg,#0c2d3a,#154f66);color:#fff;box-shadow:0 18px 45px rgba(17,65,86,.16)}.nais-spotlight span{font-size:.65rem;letter-spacing:.15em;font-weight:900;color:#9ed6e9}.nais-spotlight strong{font-size:.92rem}.nais-spotlight i{font-style:normal;font-size:1.4rem;color:#bde8f3}
+.section-kicker{letter-spacing:.16em}.subsection-heading h3{letter-spacing:-.035em}
+@media(max-width:1050px){.hero-content.hero-split{grid-template-columns:1fr;gap:38px}.hero-copy{text-align:center}.hero-copy p{margin-left:auto;margin-right:auto}.hero-copy .hero-buttons{justify-content:center}.hero-bento{max-width:720px;width:100%;margin:auto}.collection-intro{grid-template-columns:1fr}.collection-intro p{justify-self:start}}
+@media(max-width:620px){.hero{padding-top:62px}.hero-copy h2{font-size:clamp(3.1rem,15vw,4.8rem)}.hero-bento{grid-template-columns:1fr 1fr;grid-template-rows:1.15fr .7fr;min-height:420px}.bento-large{grid-row:1/3}.bento-card{padding:16px;border-radius:20px}.food-art{inset:25px 4px auto;height:220px}.food-art i{width:52px;height:52px;font-size:1.5rem}.food-art i:nth-child(2){width:70px;height:70px;font-size:2rem}.bento-ai .ai-ring{width:82px;height:82px}.ai-ring span{width:56px;height:56px;font-size:1rem}.bento-purpose .purpose-number{font-size:3rem}.bento-contact strong{font-size:.85rem}.nais-spotlight{grid-template-columns:1fr;gap:5px}.collection-intro{gap:10px}}
+
 </style>
 </head>
 <body>
@@ -80,18 +94,22 @@ footer{margin-top:36px;background:#07110d;color:#d7e4dc}.footer-content{max-widt
     <section class="hero" id="about">
         <div class="hero-glow hero-glow-one"></div>
         <div class="hero-glow hero-glow-two"></div>
-        <div class="hero-content">
-            <div class="hero-eyebrow"><span></span> ONE GROUP. TWO DISTINCT JOURNEYS. <span></span></div>
-            <h2>Nutrition for everyday life.<br><em>Intelligence for tomorrow.</em></h2>
-            <p>NutriMarc Group brings together thoughtfully crafted healthy foods and advanced intelligent systems — built with care, purpose and a long-term vision.</p>
-            <div class="hero-buttons">
-                <a href="#nhfs" class="btn btn-primary"><span>🥗</span> Explore Healthy Foods</a>
-                <a href="#nais" class="btn btn-secondary"><span>⚡</span> Explore NAIS</a>
+        <div class="hero-content hero-split">
+            <div class="hero-copy">
+                <div class="hero-eyebrow"><span></span> NUTRIMARC GROUP · PURPOSE × INNOVATION <span></span></div>
+                <h2>Built for <em>better living.</em><br>Designed for <em>what's next.</em></h2>
+                <p>From thoughtfully crafted foods to frontier intelligent systems, NutriMarc brings human care and modern technology together in one ambitious ecosystem.</p>
+                <div class="hero-buttons">
+                    <a href="#nhfs" class="btn btn-primary"><span>🥗</span> Shop Healthy Foods <b>↗</b></a>
+                    <a href="#nais" class="btn btn-secondary"><span>✦</span> Explore NAIS <b>↗</b></a>
+                </div>
+                <div class="hero-micro"><span class="micro-dot"></span> Fresh orders · Professional bootcamps · Purpose-led CSR</div>
             </div>
-            <div class="hero-trust">
-                <div><strong>Healthy</strong><span>Homemade • Natural • Tasty</span></div>
-                <div><strong>Advanced</strong><span>AI • Cloud • Data • Engineering</span></div>
-                <div><strong>Purpose-led</strong><span>CSR • Life Coaching • Social Impact</span></div>
+            <div class="hero-bento" aria-label="NutriMarc highlights">
+                <div class="bento-card bento-large"><span class="bento-index">01</span><div class="bento-art food-art"><i>🌾</i><i>🌶️</i><i>🍪</i></div><strong>Healthy Foods</strong><small>Homemade · Natural · Tasty</small><a href="#nhfs">Explore collection →</a></div>
+                <div class="bento-card bento-ai"><span class="bento-index">02</span><div class="ai-ring"><span>AI</span></div><strong>Advanced Intelligent Systems</strong><small>AI · Cloud · Data · Engineering</small><a href="#nais">View NAIS →</a></div>
+                <div class="bento-card bento-purpose"><span class="bento-index">03</span><strong>Purpose</strong><div class="purpose-number">∞</div><small>Life coaching · Girl child · Social impact</small></div>
+                <div class="bento-card bento-contact"><span>NEED HELP?</span><strong>+91 89193 94401</strong><small>Call or WhatsApp</small></div>
             </div>
         </div>
     </section>
@@ -157,6 +175,7 @@ footer{margin-top:36px;background:#07110d;color:#d7e4dc}.footer-content{max-widt
                 </label>
             </div>
 
+            <div class="collection-intro"><div><span class="collection-number">01 / 08</span><h4>Curated for your everyday table</h4></div><p>Small-batch favourites, presented with clear pack sizes and transparent pricing. Select, personalise and add to your basket.</p></div>
             <div class="product-grid" id="product-grid">
                 <!-- Products are rendered from the canonical catalog in script.js -->
             </div>
@@ -204,6 +223,8 @@ footer{margin-top:36px;background:#07110d;color:#d7e4dc}.footer-content{max-widt
             <p class="unit-desc">
                 <strong>How we are unique:</strong> NAIS operates at the absolute frontier of computational intelligence systems. We don't just offer traditional outsourcing; we build deep core technical transformations. By combining high-density custom cloud architectures with custom enterprise Agentic AI workflows, decentralized blockchain data ledgers, and quantum computing discovery mechanics, we equip enterprises with predictive automation models built for decades of scale.
             </p>
+
+            <div class="nais-spotlight"><span>FRONTIER PRACTICE</span><strong>Learn the systems behind the next generation of enterprise technology.</strong><i>→</i></div>
 
             <div class="subsection-heading">
                 <div>
