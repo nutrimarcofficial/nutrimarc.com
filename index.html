@@ -16,6 +16,7 @@
     
     <!-- Design Stylesheet Link -->
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://checkout.razorpay.com/v1/checkout.js" defer></script>
 </head>
 <body>
 
@@ -65,121 +66,78 @@
     <!-- Global Grid Container -->
     <div class="main-container">
 
-        <!-- UNIT 1: NUTRIAMRC HEALTHY FOODS SERVICES -->
+        <!-- UNIT 1: NUTRIMARC HEALTHY FOODS SERVICES -->
         <section class="unit-section" id="nhfs">
-            <h2 class="unit-title nhfs-title">NutriMarc Healthy Foods Services (NHFS)</h2>
-            <p class="unit-desc">
-                <strong>What makes us special:</strong> We craft health-first culinary experiences that bring you the pristine authenticity of natural homemade ingredients without any chemical preservation. Every piece of cookie, pickle, spice blend, or savory item balances traditional handcrafted recipes with nutritional wellness metrics—ensuring rich taste without compromising your health goals.
-            </p>
-
-            <h3>Our Premium Menu</h3>
-            <p style="margin-bottom: 20px; color: var(--gray);">Select items below to configure your instant online order reference:</p>
-            
-            <div class="menu-grid">
-                <!-- Item 1 -->
-                <div class="menu-card" data-id="1" data-name="Homemade Veg Pickle Mix" data-price="250">
-                    <div class="menu-info">
-                        <span class="menu-tag tag-veg">Vegetarian</span>
-                        <h4>Homemade Veg Pickle Mix</h4>
-                        <p class="menu-desc">Hand-pressed heritage farm vegetable collection seasoned with premium cold-pressed oils.</p>
-                        <p class="menu-price">₹250 / pack</p>
-                    </div>
-                    <div class="quantity-control">
-                        <label>Qty:</label>
-                        <input type="number" min="0" value="0" class="qty-input" onchange="updateCart()">
-                    </div>
-                </div>
-
-                <!-- Item 2 -->
-                <div class="menu-card" data-id="2" data-name="Homemade Non-Veg Pickle (Chicken)" data-price="450">
-                    <div class="menu-info">
-                        <span class="menu-tag tag-nonveg">Non-Vegetarian</span>
-                        <h4>Homemade Non-Veg Pickle</h4>
-                        <p class="menu-desc">Premium tender chicken chunks marinated in slow-roasted whole spice blends.</p>
-                        <p class="menu-price">₹450 / pack</p>
-                    </div>
-                    <div class="quantity-control">
-                        <label>Qty:</label>
-                        <input type="number" min="0" value="0" class="qty-input" onchange="updateCart()">
-                    </div>
-                </div>
-
-                <!-- Item 3 -->
-                <div class="menu-card" data-id="3" data-name="Handcrafted Crispy Savories" data-price="180">
-                    <div class="menu-info">
-                        <span class="menu-tag tag-snack">Snack</span>
-                        <h4>Handcrafted Crispy Savories</h4>
-                        <p class="menu-desc">Traditional crunchy grain crisps seasoned lightly with natural pink rock salt layers.</p>
-                        <p class="menu-price">₹180 / pack</p>
-                    </div>
-                    <div class="quantity-control">
-                        <label>Qty:</label>
-                        <input type="number" min="0" value="0" class="qty-input" onchange="updateCart()">
-                    </div>
-                </div>
-
-                <!-- Item 4 -->
-                <div class="menu-card" data-id="4" data-name="Nutritious Oatmeal Cookies" data-price="220">
-                    <div class="menu-info">
-                        <span class="menu-tag tag-veg">Vegetarian</span>
-                        <h4>Nutritious Cookies (Oatmeal)</h4>
-                        <p class="menu-desc">Whole grain flour blends baked lightly with organic unrefined cane palm nectar drops.</p>
-                        <p class="menu-price">₹220 / box</p>
-                    </div>
-                    <div class="quantity-control">
-                        <label>Qty:</label>
-                        <input type="number" min="0" value="0" class="qty-input" onchange="updateCart()">
-                    </div>
-                </div>
-
-                <!-- Item 5 -->
-                <div class="menu-card" data-id="5" data-name="Healthy Heritage Spice Powder" data-price="150">
-                    <div class="menu-info">
-                        <span class="menu-tag tag-veg">Vegetarian</span>
-                        <h4>Healthy Spice Powders</h4>
-                        <p class="menu-desc">Immunity supporting authentic dynamic spice pod grinds milled fine without heating.</p>
-                        <p class="menu-price">₹150 / pack</p>
-                    </div>
-                    <div class="quantity-control">
-                        <label>Qty:</label>
-                        <input type="number" min="0" value="0" class="qty-input" onchange="updateCart()">
-                    </div>
-                </div>
-
-                <!-- Item 6 -->
-                <div class="menu-card" data-id="6" data-name="Protein Whole Wheat Muffins" data-price="200">
-                    <div class="menu-info">
-                        <span class="menu-tag tag-snack">Snack</span>
-                        <h4>Protein Whole Wheat Muffins</h4>
-                        <p class="menu-desc">Fluffy clean whole wheat baked macro snacks sweet natural zero calorie elements.</p>
-                        <p class="menu-price">₹200 / box</p>
-                    </div>
-                    <div class="quantity-control">
-                        <label>Qty:</label>
-                        <input type="number" min="0" value="0" class="qty-input" onchange="updateCart()">
-                    </div>
+            <div class="nhfs-heading-row">
+                <div>
+                    <h2 class="unit-title nhfs-title">NutriMarc Healthy Foods Services (NHFS)</h2>
+                    <p class="unit-desc">
+                        <strong>Healthy • Homemade • Natural • Tasty.</strong> Choose your preferred product and pack size,
+                        add it to your cart and proceed to secure online checkout.
+                    </p>
                 </div>
             </div>
 
-            <!-- Dynamic Cart Panel Block -->
-            <div class="cart-panel">
+            <div class="offer-of-day" role="region" aria-label="Offer of the day">
+                <div class="offer-copy">
+                    <span class="offer-kicker">TODAY'S OFFER</span>
+                    <h3>Enjoy 10% OFF on eligible orders</h3>
+                    <p>Use the coupon below at checkout. The offer is configurable by NutriMarc and can be changed at any time.</p>
+                </div>
+                <div class="coupon-box">
+                    <span id="coupon-code-display">NUTRI10</span>
+                    <button type="button" class="copy-coupon-btn" onclick="copyCouponCode()">📋 Copy Coupon</button>
+                </div>
+            </div>
+
+            <div class="shipping-strip">
+                <span>🚚 <strong>Free shipping within 5 km of Bachupally</strong></span>
+                <span>🎁 <strong>Free shipping anywhere on orders above ₹1,499</strong></span>
+            </div>
+
+            <div class="shop-toolbar">
+                <div>
+                    <h3>Premium Healthy Foods</h3>
+                    <p>Select pack size and quantity for every item you want.</p>
+                </div>
+                <div class="cart-badge" id="cart-indicator">0 items • ₹0</div>
+            </div>
+
+            <div class="product-grid" id="product-grid">
+                <!-- Products are rendered from the canonical catalog in script.js -->
+            </div>
+
+            <div class="cart-panel sticky-cart-panel">
                 <div class="cart-title">
-                    <span>🛒 Your Selected Items Layout</span>
-                    <span id="cart-indicator" style="font-size: 0.95rem; color: var(--gray);">0 Items Selected</span>
+                    <span>🛒 Your Cart</span>
+                    <span id="cart-items-count" style="font-size:0.95rem; color:var(--gray);">0 items</span>
                 </div>
                 <div id="cart-rows-container" class="cart-items">
-                    <p style="color: var(--gray); font-style: italic;">No items configured yet. Increase item quantity values above to start ordering.</p>
+                    <p class="empty-cart">Your cart is empty. Select a product and pack size above to begin.</p>
                 </div>
-                <div class="cart-total" id="cart-grand-total">Total: ₹0</div>
+                <div class="cart-summary-grid">
+                    <div><span>Subtotal</span><strong id="cart-subtotal">₹0</strong></div>
+                    <div><span>Coupon</span><strong id="cart-discount">- ₹0</strong></div>
+                    <div class="cart-grand"><span>Payable</span><strong id="cart-grand-total">₹0</strong></div>
+                </div>
+                <div class="coupon-entry">
+                    <label for="coupon-input">Coupon code</label>
+                    <div class="coupon-entry-row">
+                        <input id="coupon-input" type="text" maxlength="30" placeholder="Enter coupon code">
+                        <button class="btn btn-secondary" type="button" onclick="applyCoupon()">Apply</button>
+                    </div>
+                    <small id="coupon-message" aria-live="polite"></small>
+                </div>
                 <div class="checkout-options">
-                    <a href="tel:+918919394401" class="btn" style="background:#475569; color:white;">📞 Quick Call Order</a>
-                    <a href="https://wa.me/918919394401" target="_blank" class="btn" style="background:#22c55e; color:white;">💬 WhatsApp Order</a>
-                    <button class="btn btn-primary" onclick="initiateCheckout()">Proceed to Secure Gateway Checkout</button>
+                    <a href="tel:+918919394401" class="btn quick-call-btn">📞 Call to Order</a>
+                    <a href="https://wa.me/918919394401" target="_blank" rel="noopener" class="btn whatsapp-btn">💬 WhatsApp</a>
+                    <button class="btn btn-primary" type="button" onclick="openCheckoutForm()">🔐 Secure Online Checkout</button>
                 </div>
+                <p class="payment-method-note">Online checkout supports UPI/QR, credit cards, debit cards and net banking through the payment gateway.</p>
             </div>
         </section>
 
-        <!-- UNIT 2: NUTRIAMRC ADVANCED INTELLIGENT SYSTEMS -->
+        <!-- UNIT 2: NUTRIMARC ADVANCED INTELLIGENT SYSTEMS -->
         <section class="unit-section" id="nais">
             <h2 class="unit-title nais-title">NutriMarc Advanced Intelligent Systems (NAIS)</h2>
             <p class="unit-desc">
@@ -187,45 +145,76 @@
             </p>
 
             <h3>Upcoming Professional Technical Bootcamps</h3>
-            <p style="margin-bottom: 15px; color: var(--gray);">Subscribe directly to our incoming structured deep-tech specialized training programs:</p>
-            
-            <div class="table-responsive">
-                <table class="schedule-table">
-                    <thead>
-                        <tr>
-                            <th>Program Curriculum Name</th>
-                            <th>Target Launch Date</th>
-                            <th>Curriculum Syllabus</th>
-                            <th>Instant Action Access</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Agentic AI & Autonomous AI Agents Engineering</strong></td>
-                            <td>October 12, 2026</td>
-                            <td><a href="docs/agentic-ai-syllabus.pdf" download style="color: var(--secondary); font-weight:600;">📁 Download Syllabus (PDF)</a></td>
-                            <td><button class="btn btn-secondary" style="padding:6px 15px; font-size:0.85rem;" onclick="openCourseSubscribe('Agentic AI & Autonomous AI Agents Engineering')">Subscribe Program</button></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Enterprise Generative AI & Deep ML Models</strong></td>
-                            <td>November 05, 2026</td>
-                            <td><a href="docs/generative-ai-syllabus.pdf" download style="color: var(--secondary); font-weight:600;">📁 Download Syllabus (PDF)</a></td>
-                            <td><button class="btn btn-secondary" style="padding:6px 15px; font-size:0.85rem;" onclick="openCourseSubscribe('Enterprise Generative AI & Deep ML Models')">Subscribe Program</button></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Quantum Computing & Blockchain Cryptographic Architectures</strong></td>
-                            <td>December 01, 2026</td>
-                            <td><a href="docs/quantum-blockchain-syllabus.pdf" download style="color: var(--secondary); font-weight:600;">📁 Download Syllabus (PDF)</a></td>
-                            <td><button class="btn btn-secondary" style="padding:6px 15px; font-size:0.85rem;" onclick="openCourseSubscribe('Quantum Computing & Blockchain Cryptographic Architectures')">Subscribe Program</button></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Advanced Cloud Infrastructure & Real-Time Data Analytics</strong></td>
-                            <td>January 18, 2027</td>
-                            <td><a href="docs/cloud-analytics-syllabus.pdf" download style="color: var(--secondary); font-weight:600;">📁 Download Syllabus (PDF)</a></td>
-                            <td><button class="btn btn-secondary" style="padding:6px 15px; font-size:0.85rem;" onclick="openCourseSubscribe('Advanced Cloud Infrastructure & Real-Time Data Analytics')">Subscribe Program</button></td>
-                        </tr>
-                    </tbody>
-                </table>
+            <p style="margin-bottom: 15px; color: var(--gray);">Choose one or more programs and submit your registration request. Our advisor will contact you at the details you provide.</p>
+
+            <div class="bootcamp-grid">
+                <label class="bootcamp-option">
+                    <input type="checkbox" name="bootcamp" value="Agentic AI & Autonomous AI Agents Engineering">
+                    <span class="bootcamp-checkmark">✓</span>
+                    <span>
+                        <strong>Agentic AI & Autonomous AI Agents Engineering</strong>
+                        <small>Launch: October 12, 2026</small>
+                    </span>
+                </label>
+                <label class="bootcamp-option">
+                    <input type="checkbox" name="bootcamp" value="Enterprise Generative AI & Deep ML Models">
+                    <span class="bootcamp-checkmark">✓</span>
+                    <span>
+                        <strong>Enterprise Generative AI & Deep ML Models</strong>
+                        <small>Launch: November 05, 2026</small>
+                    </span>
+                </label>
+                <label class="bootcamp-option">
+                    <input type="checkbox" name="bootcamp" value="Quantum Computing & Blockchain Cryptographic Architectures">
+                    <span class="bootcamp-checkmark">✓</span>
+                    <span>
+                        <strong>Quantum Computing & Blockchain Cryptographic Architectures</strong>
+                        <small>Launch: December 01, 2026</small>
+                    </span>
+                </label>
+                <label class="bootcamp-option">
+                    <input type="checkbox" name="bootcamp" value="Advanced Cloud Infrastructure & Real-Time Data Analytics">
+                    <span class="bootcamp-checkmark">✓</span>
+                    <span>
+                        <strong>Advanced Cloud Infrastructure & Real-Time Data Analytics</strong>
+                        <small>Launch: January 18, 2027</small>
+                    </span>
+                </label>
+            </div>
+
+            <div class="bootcamp-registration-card">
+                <div>
+                    <h4>Register Your Interest</h4>
+                    <p>Submit your preferred program(s), and our advisor will get back to you.</p>
+                </div>
+                <form id="bootcamp-registration-form" onsubmit="submitBootcampRegistration(event)">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="boot-name">Name *</label>
+                            <input id="boot-name" type="text" required autocomplete="name" placeholder="Your full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="boot-phone">Contact Number *</label>
+                            <input id="boot-phone" type="tel" required autocomplete="tel" placeholder="+91 98765 43210">
+                        </div>
+                        <div class="form-group">
+                            <label for="boot-email">Email Address *</label>
+                            <input id="boot-email" type="email" required autocomplete="email" placeholder="you@example.com">
+                        </div>
+                        <div class="form-group form-group-full">
+                            <label for="boot-request">Request Details</label>
+                            <textarea id="boot-request" rows="4" placeholder="Tell us anything our advisor should know (experience, preferred schedule, questions, etc.)"></textarea>
+                        </div>
+                    </div>
+                    <p id="bootcamp-selection-message" class="inline-form-message" aria-live="polite"></p>
+                    <button type="submit" class="btn btn-secondary">Submit Registration Request</button>
+                </form>
+                <div class="advisor-contact">
+                    <strong>Need help before registering?</strong>
+                    <span>Advisor: +91-8919394401</span>
+                    <a href="tel:+918919394401">📞 Call</a>
+                    <a href="https://wa.me/918919394401" target="_blank" rel="noopener">💬 WhatsApp</a>
+                </div>
             </div>
 
             <!-- NAIS Specialized Table Inquire Form -->
@@ -383,57 +372,66 @@
 
     </div>
 
-    <!-- INTERACTIVE GATEWAY & VERIFICATION POPUPS -->
-    <!-- Gateway Selection Modal -->
-    <div class="popup-overlay" id="checkout-gateway-modal">
-        <div class="popup-box">
-            <button class="close-popup" onclick="closeModal('checkout-gateway-modal')">&times;</button>
-            <h3>🔐 Secure Payment Gateway Portal</h3>
-            <p>Select your authorized processing architecture interface to complete credit routing:</p>
-            
-            <div class="upi-details">
-                <strong>Target UPI Address VPA:</strong><br>
-                <span style="font-size: 1.2rem; color: var(--primary-dark); font-weight: bold;">admn.chand@ibl</span>
-            </div>
-            
-            <p style="font-size:0.85rem; color:var(--gray); margin-bottom:20px;">Your payment will settle directly to the parent account with verified bank routing.</p>
-            
-            <div style="display:flex; flex-direction:column; gap:10px;">
-                <button class="btn btn-primary" onclick="processFinalOrderPlacement('Instant UPI App Gateway')">Proceed via Linked UPI App Gateway</button>
-                <button class="btn btn-secondary" onclick="processFinalOrderPlacement('Card / NetBanking Secure Gateway')">Proceed via Card / NetBanking Suite</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Course Registration / Subscription Modal -->
-    <div class="popup-overlay" id="course-subscribe-modal">
-        <div class="popup-box">
-            <button class="close-popup" onclick="closeModal('course-subscribe-modal')">&times;</button>
-            <h3>📚 Program Seat Reservation</h3>
-            <p id="subscribe-course-display-title" style="font-weight: bold; color: var(--secondary-dark); margin-bottom: 20px;"></p>
-            
-            <form id="course-sub-form" onsubmit="handleCourseSubscription(event)">
-                <div class="form-group">
-                    <label>Your Name:</label>
-                    <input type="text" id="sub-name" required>
+    <!-- CHECKOUT & REGISTRATION MODALS -->
+    <div class="popup-overlay" id="checkout-customer-modal" aria-hidden="true">
+        <div class="popup-box checkout-box">
+            <button class="close-popup" onclick="closeModal('checkout-customer-modal')" aria-label="Close">&times;</button>
+            <h3>🔐 Secure Checkout</h3>
+            <p class="modal-subtitle">Enter your delivery and contact details. You will then be redirected to the secure payment gateway.</p>
+            <form id="checkout-customer-form" onsubmit="startOnlinePayment(event)">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="customer-name">Full Name *</label>
+                        <input id="customer-name" required autocomplete="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="customer-phone">Phone *</label>
+                        <input id="customer-phone" type="tel" required autocomplete="tel">
+                    </div>
+                    <div class="form-group">
+                        <label for="customer-email">Email *</label>
+                        <input id="customer-email" type="email" required autocomplete="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="customer-pincode">PIN Code *</label>
+                        <input id="customer-pincode" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" required placeholder="500090">
+                    </div>
+                    <div class="form-group form-group-full">
+                        <label for="customer-address">Delivery Address *</label>
+                        <textarea id="customer-address" rows="3" required autocomplete="street-address" placeholder="House / Flat, Street, Area, City, Telangana"></textarea>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>Email Address:</label>
-                    <input type="email" id="sub-email" required>
-                </div>
-                <button type="submit" class="btn btn-secondary" style="width:100%; margin-top:10px;">Confirm Program Subscription</button>
+                <div class="checkout-review" id="checkout-review"></div>
+                <p id="checkout-error" class="inline-form-message error" aria-live="polite"></p>
+                <button type="submit" id="pay-now-btn" class="btn btn-primary checkout-pay-btn">Proceed to Payment</button>
             </form>
         </div>
     </div>
 
-    <!-- Status Output / Success Alert Popup -->
-    <div class="popup-overlay" id="status-success-modal">
+    <div class="popup-overlay" id="order-status-modal" aria-hidden="true">
         <div class="popup-box">
-            <button class="close-popup" onclick="closeModal('status-success-modal')">&times;</button>
-            <div style="font-size: 3rem; color: var(--primary); margin-bottom: 10px;">✅</div>
-            <h3 id="status-modal-header">Request Successfully Transmitted</h3>
-            <p id="status-modal-body" style="color: var(--gray); margin-bottom: 20px; font-size: 0.95rem;"></p>
-            <button class="btn btn-primary" onclick="closeModal('status-success-modal')">Acknowledge & Close</button>
+            <button class="close-popup" onclick="closeModal('order-status-modal')" aria-label="Close">&times;</button>
+            <div id="order-status-icon" class="status-icon">✓</div>
+            <h3 id="order-status-header">Request received</h3>
+            <p id="order-status-body" class="modal-body-text"></p>
+            <div id="order-status-actions" class="status-actions"></div>
+        </div>
+    </div>
+
+    <div class="popup-overlay" id="bootcamp-status-modal" aria-hidden="true">
+        <div class="popup-box">
+            <button class="close-popup" onclick="closeModal('bootcamp-status-modal')" aria-label="Close">&times;</button>
+            <div class="status-icon">✓</div>
+            <h3>Registration Request Received</h3>
+            <p id="bootcamp-status-body" class="modal-body-text"></p>
+            <div class="bootcamp-support-message">
+                <p><strong>In the meantime, please feel free to reach us over our dedicated support team</strong> available via phone call or WhatsApp.</p>
+                <div class="advisor-contact modal-advisor">
+                    <a href="tel:+918919394401">📞 <strong>+91-8919394401</strong> — Call Us</a>
+                    <a href="https://wa.me/918919394401" target="_blank" rel="noopener">💬 <strong>+91-8919394401</strong> — WhatsApp Us</a>
+                </div>
+            </div>
+            <button class="btn btn-secondary" onclick="closeModal('bootcamp-status-modal')">Done</button>
         </div>
     </div>
 
@@ -479,181 +477,7 @@
         </div>
     </footer>
 
-    <!-- INTERACTIVE FUNCTIONAL JAVASCRIPT STATE ENGINE -->
-    <script>
-        // Reactive Checkout Calculations Engine Data Object
-        let finalCartPayloadText = "";
-        let finalCartAmountTotal = 0;
-        let designatedActiveCourseName = "";
-
-        function updateCart() {
-            const cards = document.querySelectorAll('.menu-card');
-            let rowsHtml = "";
-            let computedTotal = 0;
-            let totalSelectedItemsCount = 0;
-            let tempSummaryString = "";
-
-            cards.forEach(card => {
-                const itemId = card.getAttribute('data-id');
-                const itemName = card.getAttribute('data-name');
-                const itemPrice = parseInt(card.getAttribute('data-price'));
-                const qtyInput = card.querySelector('.qty-input');
-                const currentQty = parseInt(qtyInput.value) || 0;
-
-                if (currentQty > 0) {
-                    const rowCost = itemPrice * currentQty;
-                    computedTotal += rowCost;
-                    totalSelectedItemsCount += currentQty;
-                    tempSummaryString += `${itemName} (Qty: ${currentQty}) - ₹${rowCost}\n`;
-                    
-                    rowsHtml += `
-                        <div class="cart-item-row">
-                            <span><strong>${itemName}</strong> x ${currentQty}</span>
-                            <span>₹${rowCost}</span>
-                        </div>
-                    `;
-                }
-            });
-
-            const rowsContainer = document.getElementById('cart-rows-container');
-            const totalDisplay = document.getElementById('cart-grand-total');
-            const indicatorDisplay = document.getElementById('cart-indicator');
-
-            if (totalSelectedItemsCount > 0) {
-                rowsContainer.innerHTML = rowsHtml;
-                totalDisplay.innerText = "Total: ₹" + computedTotal;
-                indicatorDisplay.innerText = totalSelectedItemsCount + " Items Pre-configured";
-                finalCartPayloadText = tempSummaryString;
-                finalCartAmountTotal = computedTotal;
-            } else {
-                rowsContainer.innerHTML = '<p style="color: var(--gray); font-style: italic;">No items configured yet. Increase item quantity values above to start ordering.</p>';
-                totalDisplay.innerText = "Total: ₹0";
-                indicatorDisplay.innerText = "0 Items Selected";
-                finalCartPayloadText = "";
-                finalCartAmountTotal = 0;
-            }
-        }
-
-        function initiateCheckout() {
-            if (finalCartAmountTotal <= 0) {
-                alert("Please add at least one delicious item configuration to your cart before entering the checkout workflow.");
-                return;
-            }
-            // Display Payment Gateways Modal View
-            document.getElementById('checkout-gateway-modal').style.display = 'flex';
-        }
-
-        function processFinalOrderPlacement(selectedGatewayMethod) {
-            // Close Gateway View Component
-            closeModal('checkout-gateway-modal');
-
-            // Generate Globally Unique Alpha-Numeric Request Reference Number
-            const uniqueReferenceCode = "NHFS-" + Math.floor(100000 + Math.random() * 900000);
-            
-            // Format precise message fields matching corporate instruction guidelines
-            const emailSubject = encodeURIComponent(`NEW ONLINE ORDER REQUIRED [${uniqueReferenceCode}]`);
-            const emailBody = encodeURIComponent(
-                `NUTRIAMRC HEALTHY FOODS SERVICES (NHFS) - ONLINE ORDER\n` +
-                `======================================================\n` +
-                `Unique Request Reference Code: ${uniqueReferenceCode}\n` +
-                `Settlement Gateway Mode Chosen: ${selectedGatewayMethod}\n` +
-                `Assigned Bank Credit UPI Alias: admn.chand@ibl\n\n` +
-                `Ordered Products Matrix:\n${finalCartPayloadText}\n` +
-                `Grand Settlement Total: ₹${finalCartAmountTotal}\n` +
-                `======================================================\n` +
-                `Please process and verify tracking once client settles link payment variables.`
-            );
-
-            // Trigger Direct Browser Native Automated Interface Fallback targeting contact@nutrmarc.com
-            // Note: The prompt explicitly asked to route details to contact@nutrmarc.com (without 'i') for order checkout
-            window.location.href = `mailto:contact@nutrmarc.com?subject=${emailSubject}&body=${emailBody}`;
-
-            // Trigger Pop-up Modal to User highlighting absolute real-time order reference codes
-            document.getElementById('status-modal-header').innerText = "Order Successfully Created!";
-            document.getElementById('status-modal-body').innerText = 
-                `Your unique request reference code is: ${uniqueReferenceCode}. ` +
-                `An email draft containing payment configuration specs has been initialized for dispatch to contact@nutrmarc.com. ` +
-                `Your payment settlement value of ₹${finalCartAmountTotal} is routed towards upi code: admn.chand@ibl.`;
-            
-            document.getElementById('status-success-modal').style.display = 'flex';
-        }
-
-        function handleNaisInquiry(event) {
-            event.preventDefault();
-            
-            const uniqueRefNum = "NAIS-" + Math.floor(100000 + Math.random() * 900000);
-            const clientName = document.getElementById('nais-name').value;
-            const clientEmail = document.getElementById('nais-email').value;
-            const chosenService = document.getElementById('nais-service').value;
-            const chosenTimeline = document.getElementById('nais-timeline').value;
-            const detailedMsg = document.getElementById('nais-message').value;
-
-            const trackingTokenString = `NAIS:${uniqueRefNum}`;
-            const mailSubject = encodeURIComponent(`System Inquiry Log: [${trackingTokenString}]`);
-            const mailBody = encodeURIComponent(
-                `NUTRIAMRC ADVANCED INTELLIGENT SYSTEMS (NAIS) CONSULTING LOG\n` +
-                `===============================================================\n` +
-                `Unique System Identifier Token: ${trackingTokenString}\n` +
-                `Corporate Client Entity Name: ${clientName}\n` +
-                `Secure Callback Address Link: ${clientEmail}\n` +
-                `Selected Architecture Scope Area: ${chosenService}\n` +
-                `Client Target Delivery Baseline: ${chosenTimeline}\n\n` +
-                `Detailed System Specifications Provided:\n"${detailedMsg}"\n` +
-                `===============================================================\n` +
-                `Dispatched via Secure Static Deployment Node Framework.`
-            );
-
-            window.location.href = `mailto:contact@nutrimarc.com?subject=${mailSubject}&body=${mailBody}`;
-
-            document.getElementById('status-modal-header').innerText = "Inquiry Blueprint Generated";
-            document.getElementById('status-modal-body').innerText = 
-                `Your absolute unique reference identifier token is: ${trackingTokenString}. ` +
-                `Your structural consultation parameters have been packaged for direct email dispatch to contact@nutrimarc.com.`;
-            
-            document.getElementById('status-success-modal').style.display = 'flex';
-            document.getElementById('nais-inquiry-form').reset();
-        }
-
-        function openCourseSubscribe(courseTitle) {
-            designatedActiveCourseName = courseTitle;
-            document.getElementById('subscribe-course-display-title').innerText = "Program: " + courseTitle;
-            document.getElementById('course-subscribe-modal').style.display = 'flex';
-        }
-
-        function handleCourseSubscription(event) {
-            event.preventDefault();
-            
-            const subClientName = document.getElementById('sub-name').value;
-            const subClientEmail = document.getElementById('sub-email').value;
-
-            const courseSubject = encodeURIComponent(`BOOTCAMP SUBSCRIPTION REGISTERED: ${designatedActiveCourseName}`);
-            const courseBody = encodeURIComponent(
-                `NAIS DIGITAL TRAINING SEAT RESERVATION METRICS\n` +
-                `======================================================\n` +
-                `Target Bootcamp Course: ${designatedActiveCourseName}\n` +
-                `Enrolled Subscriber Profile Name: ${subClientName}\n` +
-                `Communication Verification Link: ${subClientEmail}\n` +
-                `Registration Time Stamp Profile: 2026-08-28\n` +
-                `======================================================\n` +
-                `Forwarding metrics log parameters to administrative dashboard endpoint contact@nutrimarc.com.`
-            );
-
-            window.location.href = `mailto:contact@nutrimarc.com?subject=${courseSubject}&body=${courseBody}`;
-
-            closeModal('course-subscribe-modal');
-
-            document.getElementById('status-modal-header').innerText = "Subscription Active!";
-            document.getElementById('status-modal-body').innerText = 
-                `Thank you ${subClientName}. You have subscribed to the "${designatedActiveCourseName}" bootcamp suite. ` +
-                `Your access profile log has been triggered for compilation to contact@nutrimarc.com.`;
-            
-            document.getElementById('status-success-modal').style.display = 'flex';
-            document.getElementById('course-sub-form').reset();
-        }
-
-        function closeModal(modalId) {
-            document.getElementById(modalId).style.display = 'none';
-        }
-    </script>
+    <script src="config.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
