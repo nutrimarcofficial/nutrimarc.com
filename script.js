@@ -32,6 +32,8 @@ const PRODUCT_CATALOG = [
 const OFFER = { code: "NUTRI10", percent: 10, maxDiscount: 200, minSubtotal: 499 };
 let cart = [];
 let appliedCoupon = "";
+let activeCategory = "All";
+let productSearchTerm = "";
 
 function money(value) { return `₹${Number(value || 0).toLocaleString("en-IN")}`; }
 function escapeHtml(value) {
@@ -46,6 +48,7 @@ function initApp() {
   }
   renderProducts();
   renderCart();
+  initStoreControls();
   initCounters();
 }
 
@@ -54,38 +57,149 @@ document.addEventListener("DOMContentLoaded", initApp);
 function renderProducts() {
   const grid = document.getElementById("product-grid");
   if (!grid) return;
+
+  const filtered = PRODUCT_CATALOG.filter(product => {
+    const categoryMatch = activeCategory === "All" || product.category === activeCategory;
+    const searchMatch = !productSearchTerm ||
+      `${product.name} ${product.category} ${product.tag}`.toLowerCase().includes(productSearchTerm.toLowerCase());
+    return categoryMatch && searchMatch;
+  });
+
   const groups = [];
-  PRODUCT_CATALOG.forEach(product => {
+  filtered.forEach(product => {
     let group = groups.find(g => g.name === product.category);
     if (!group) { group = {name: product.category, products: []}; groups.push(group); }
     group.products.push(product);
   });
-  grid.innerHTML = groups.map(group => `
-    <div class="product-category">
-      <div class="category-heading"><h4>${escapeHtml(group.name)}</h4><span>${group.products.length} items</span></div>
+
+  grid.innerHTML = groups.length ? groups.map(group => `
+    <section class="product-category">
+      <div class="category-heading">
+        <div>
+          <span class="category-overline">${categoryIcon(group.name)} ${escapeHtml(group.name)}</span>
+          <h4>${categoryTitle(group.name)}</h4>
+        </div>
+        <span class="category-count">${group.products.length} ${group.products.length === 1 ? "item" : "items"}</span>
+      </div>
       <div class="category-products">
         ${group.products.map(renderProductCard).join("")}
       </div>
-    </div>`).join("");
+    </section>`).join("") :
+    `<div class="no-results"><span>⌕</span><h4>No products found</h4><p>Try another food name or choose “All” categories.</p></div>`;
+
+  updateFilterButtons();
+}
+
+const PRODUCT_DESCRIPTIONS = {
+  "Chicken Pickle":"Bold, homestyle chicken pickle with a rich, savoury finish.",
+  "Chicken Boneless Pickle":"Tender boneless chicken in a traditional, flavour-packed pickle.",
+  "Chicken Gongura Pickle":"A tangy gongura twist paired with hearty chicken.",
+  "Mutton Pickle":"Rich mutton pickle crafted for a deep, traditional taste.",
+  "Prawns Pickle":"Succulent prawns blended with a vibrant, spicy pickle masala.",
+  "Prawns Gongura Pickle":"Tangy gongura and prawns come together in a distinctive Andhra-style flavour.",
+  "Tomato Pickle":"Bright, tangy tomato pickle made for everyday meals.",
+  "Gongura Pickle":"Classic gongura pickle with a deliciously tangy, savoury character.",
+  "Kaju Masala":"Crunchy cashews seasoned with a savoury masala.",
+  "Masala Peanuts":"Roasted peanuts with a lively masala coating.",
+  "Makhana":"Crisp, light makhana with a wholesome snack appeal.",
+  "Sunundalu":"Traditional lentil-based sweet with a comforting homemade character.",
+  "Ragi Dryfruit Laddu":"Ragi and dry fruits in a nourishing, indulgent laddu.",
+  "Dryfruit Laddu":"Rich dry-fruit laddu for celebrations or a sweet treat.",
+  "Bellam Gavvalu":"A traditional sweet with the warm taste of jaggery.",
+  "Flaxseed Powder":"Everyday podi-style flaxseed powder for an easy flavour boost.",
+  "Idli Karam":"A versatile spicy podi to complement idli and South Indian breakfasts.",
+  "Munagaku Karam":"A distinctive drumstick-leaf podi with a traditional touch.",
+  "Chocochip Muffins":"Soft, chocolate-chip muffins made for an easy sweet bite.",
+  "Jowar/Ragi Chocochip Cookies":"Millet-inspired cookies with chocolate chips and a satisfying crunch.",
+  "Jowar/Ragi Almond Cookies":"Jowar and ragi cookies with the nutty character of almonds.",
+  "Jowar/Ragi Double Chocochip Cookies":"Extra chocolate chips meet a millet-inspired cookie base.",
+  "Jowar Ragi Plain Cookies":"Simple, crisp jowar-ragi cookies for everyday snacking.",
+  "NutriMarc Special Cake Tin (Healthy Chocolate Cake)":"A special NutriMarc chocolate cake tin for sharing and celebrations."
+};
+
+function categoryIcon(category) {
+  return ({
+    "Non-Veg Pickles":"●", "Veg Pickles":"●", "Savoury":"◆", "Sweets":"✦",
+    "Podulu":"◈", "Chocochip Muffins":"●", "Cookies":"●", "NutriMarc Special":"★"
+  })[category] || "•";
+}
+function categoryTitle(category) {
+  return ({
+    "Non-Veg Pickles":"Traditional non-veg pickles",
+    "Veg Pickles":"Homestyle vegetarian pickles",
+    "Savoury":"Crispy savouries & snacks",
+    "Sweets":"Traditional sweets",
+    "Podulu":"Everyday podulu",
+    "Chocochip Muffins":"Fresh-bake favourites",
+    "Cookies":"Jowar & ragi cookies",
+    "NutriMarc Special":"Our special selection"
+  })[category] || category;
+}
+
+function slugify(value) {
+  return String(value).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}
+function productVisual(category) {
+  return ({
+    "Non-Veg Pickles":"🌶️", "Veg Pickles":"🥒", "Savoury":"🥜", "Sweets":"✦",
+    "Podulu":"🌾", "Chocochip Muffins":"🧁", "Cookies":"🍪", "NutriMarc Special":"🍫"
+  })[category] || "✦";
 }
 
 function renderProductCard(product) {
-  const sizeOptions = Object.entries(product.sizes).map(([size, price]) =>
-    `<option value="${escapeHtml(size)}">${escapeHtml(size)} — ${money(price)}</option>`).join("");
+  const sizeEntries = Object.entries(product.sizes);
+  const sizeOptions = sizeEntries.map(([size, price], index) =>
+    `<option value="${escapeHtml(size)}">${escapeHtml(size)} · ${money(price)}</option>`).join("");
+  const startingPrice = Math.min(...sizeEntries.map(([,price]) => price));
+  const description = PRODUCT_DESCRIPTIONS[product.name] || "Thoughtfully prepared for the NutriMarc Healthy Foods collection.";
+  const tagClass = product.tag === "Non-Veg" ? "tag-nonveg" : product.tag === "Sweet" ? "tag-sweet" : "tag-veg";
   return `
     <article class="product-card">
-      <div class="product-topline"><span class="menu-tag ${product.tag === "Non-Veg" ? "tag-nonveg" : "tag-veg"}">${escapeHtml(product.tag)}</span></div>
-      <h5>${escapeHtml(product.name)}</h5>
-      <div class="product-purchase-row">
-        <select class="product-size" id="size-${product.id}" aria-label="Pack size for ${escapeHtml(product.name)}">${sizeOptions}</select>
-        <div class="product-qty">
-          <button type="button" onclick="changeProductQty('${product.id}', -1)">−</button>
-          <input id="qty-${product.id}" type="number" min="0" value="0" aria-label="Quantity">
-          <button type="button" onclick="changeProductQty('${product.id}', 1)">+</button>
-        </div>
+      <div class="product-image-wrap category-visual category-${slugify(product.category)}" aria-hidden="true">
+        <span class="visual-orb">${productVisual(product.category)}</span>
+        <span class="visual-label">${escapeHtml(product.category)}</span>
+        <span class="product-badge ${tagClass}">${escapeHtml(product.tag)}</span>
       </div>
-      <button type="button" class="btn btn-primary add-product-btn" onclick="addProduct('${product.id}')">Add to Cart</button>
+      <div class="product-content">
+        <div class="product-meta"><span>${escapeHtml(product.category)}</span><span>From ${money(startingPrice)}</span></div>
+        <h5>${escapeHtml(product.name)}</h5>
+        <p>${escapeHtml(description)}</p>
+        <div class="product-purchase-row">
+          <label class="sr-only" for="size-${product.id}">Pack size</label>
+          <select class="product-size" id="size-${product.id}" aria-label="Pack size for ${escapeHtml(product.name)}">${sizeOptions}</select>
+          <div class="product-qty" aria-label="Quantity">
+            <button type="button" onclick="changeProductQty('${product.id}', -1)" aria-label="Decrease quantity">−</button>
+            <input id="qty-${product.id}" type="number" min="0" max="99" value="0" inputmode="numeric" aria-label="Quantity">
+            <button type="button" onclick="changeProductQty('${product.id}', 1)" aria-label="Increase quantity">+</button>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary add-product-btn" onclick="addProduct('${product.id}')">Add to basket <span>+</span></button>
+      </div>
     </article>`;
+}
+
+function updateFilterButtons() {
+  document.querySelectorAll(".filter-btn").forEach(btn => {
+    const isActive = btn.dataset.filter === activeCategory;
+    btn.classList.toggle("active", isActive);
+    btn.setAttribute("aria-pressed", String(isActive));
+  });
+}
+
+function initStoreControls() {
+  document.querySelectorAll(".filter-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      activeCategory = btn.dataset.filter || "All";
+      renderProducts();
+    });
+  });
+  const search = document.getElementById("product-search");
+  if (search) {
+    search.addEventListener("input", () => {
+      productSearchTerm = search.value.trim();
+      renderProducts();
+    });
+  }
 }
 
 function changeProductQty(productId, delta) {
@@ -96,10 +210,13 @@ function changeProductQty(productId, delta) {
 
 function addProduct(productId) {
   const product = PRODUCT_CATALOG.find(p => p.id === productId);
-  const size = document.getElementById(`size-${productId}`).value;
+  if (!product) return;
+  const sizeSelect = document.getElementById(`size-${productId}`);
+  const size = sizeSelect ? sizeSelect.value : "";
+  if (!Object.prototype.hasOwnProperty.call(product.sizes, size)) return;
   const qtyInput = document.getElementById(`qty-${productId}`);
   const qty = Math.max(1, parseInt(qtyInput.value, 10) || 0);
-  if (!product || qty <= 0) return;
+  if (qty <= 0) return;
   const key = `${productId}::${size}`;
   const existing = cart.find(i => i.key === key);
   if (existing) existing.qty += qty;
@@ -153,11 +270,30 @@ function renderCart() {
   if (message && appliedCoupon) message.textContent = calculateDiscount() > 0 ? `Coupon ${appliedCoupon} applied.` : `Coupon ${appliedCoupon} needs a minimum subtotal of ${money(OFFER.minSubtotal)}.`;
 }
 
-function copyCouponCode() {
-  navigator.clipboard?.writeText(OFFER.code).then(() => {
+async function copyCouponCode() {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(OFFER.code);
+    } else {
+      const helper = document.createElement("textarea");
+      helper.value = OFFER.code;
+      helper.style.position = "fixed";
+      helper.style.opacity = "0";
+      document.body.appendChild(helper);
+      helper.select();
+      document.execCommand("copy");
+      helper.remove();
+    }
     const btn = document.querySelector(".copy-coupon-btn");
-    if (btn) { const old = btn.textContent; btn.textContent = "✓ Copied"; setTimeout(() => btn.textContent = old, 1400); }
-  });
+    if (btn) {
+      const old = btn.innerHTML;
+      btn.innerHTML = "✓ Copied";
+      setTimeout(() => btn.innerHTML = old, 1600);
+    }
+  } catch (_) {
+    const msg = document.getElementById("coupon-message");
+    if (msg) msg.textContent = "Coupon: " + OFFER.code;
+  }
 }
 
 function applyCoupon() {
@@ -259,17 +395,74 @@ async function submitBootcampRegistration(event) {
     email: document.getElementById("boot-email").value.trim(),
     requestDetails: document.getElementById("boot-request").value.trim()
   };
+  if (!payload.name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.email) || payload.phone.replace(/\D/g,"").length < 10) {
+    msg.textContent = "Please enter a valid name, 10-digit contact number and email address.";
+    msg.className = "inline-form-message error";
+    return;
+  }
   try {
     const response = await fetch(`${API_BASE_URL}/bootcamps/register`, {method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(payload)});
     const data = await response.json();
     if (!response.ok) throw new Error(data.message || "Unable to submit your registration.");
-    document.getElementById("bootcamp-status-body").textContent = `Thank you, ${payload.name}. Your registration request has been received. Our advisor will get back to you shortly.`;
+    document.getElementById("bootcamp-status-body").textContent = `Thank you, ${payload.name}. Your registration request has been received. Our advisor will get back to you shortly. In the meantime, please feel free to reach us over our dedicated support team available via phone call or WhatsApp on +91-8919394401.`;
     document.getElementById("bootcamp-registration-form").reset();
     msg.textContent = "";
     openModal("bootcamp-status-modal");
   } catch (e) {
     msg.textContent = e.message || "We could not submit your request. Please call or WhatsApp +91-8919394401.";
     msg.className = "inline-form-message error";
+  }
+}
+
+async function handleNaisInquiry(event) {
+  event.preventDefault();
+  const form = event.currentTarget;
+  const button = form.querySelector('button[type="submit"]');
+  const name = document.getElementById("nais-name").value.trim();
+  const email = document.getElementById("nais-email").value.trim();
+  const service = document.getElementById("nais-service").value;
+  const timeline = document.getElementById("nais-timeline").value;
+  const message = document.getElementById("nais-message").value.trim();
+  button.disabled = true;
+  button.textContent = "Sending inquiry…";
+  try {
+    const response = await fetch(`${API_BASE_URL}/inquiries/nais`, {
+      method:"POST", headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({name,email,service,timeline,message})
+    });
+    const data = await response.json();
+    if (!response.ok) throw new Error(data.message || "Unable to send the inquiry.");
+    form.reset();
+    showOrderStatus(true, "NAIS inquiry received", `Thank you, ${name}. Your inquiry has been received. Our team will review your requirements and get back to you shortly.`);
+  } catch (e) {
+    showOrderStatus(false, "Unable to send inquiry", `${e.message || "Please try again."} You can also call or WhatsApp +91-8919394401.`);
+  } finally {
+    button.disabled = false;
+    button.textContent = "Submit Specialized NAIS Inquiry";
+  }
+}
+
+async function handleGlobalEnquiry(event) {
+  event.preventDefault();
+  const form = event.currentTarget;
+  const button = form.querySelector('button[type="submit"]');
+  const formData = new FormData(form);
+  const payload = Object.fromEntries(formData.entries());
+  button.disabled = true;
+  button.textContent = "Sending…";
+  try {
+    const response = await fetch(`${API_BASE_URL}/inquiries/general`, {
+      method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(payload)
+    });
+    const data = await response.json();
+    if (!response.ok) throw new Error(data.message || "Unable to send your enquiry.");
+    form.reset();
+    showOrderStatus(true, "Enquiry received", `Thank you, ${payload.name || "there"}. Your enquiry has been received. Our team will get back to you shortly.`);
+  } catch (e) {
+    showOrderStatus(false, "Enquiry could not be sent", `${e.message || "Please try again."} You can also contact us on +91-8919394401.`);
+  } finally {
+    button.disabled = false;
+    button.textContent = "Dispatch Corporate Query";
   }
 }
 

@@ -46,3 +46,21 @@ The website displays these rules. It does not automatically calculate geographic
 ## Email address
 
 The website uses `contact@nutrimarc.com`. The earlier request contained `contact@nutirmarc.com`; this implementation uses the NutriMarc domain spelling.
+
+
+## Premium UI / reliability refresh
+This version includes a redesigned responsive storefront, category filters, product search, professional product cards, improved cart controls, resilient coupon-copy behavior, NAIS registration and inquiry API endpoints, and clearer success/error states.
+
+### Required production configuration
+Set these server environment variables:
+- `RAZORPAY_KEY_ID`
+- `RAZORPAY_KEY_SECRET`
+- `RESEND_API_KEY`
+- `EMAIL_FROM` (must be an address/domain verified with your email provider)
+- `ADMIN_EMAIL=contact@nutrimarc.com`
+- `FRONTEND_ORIGIN=https://nutrimarc.com`
+
+Do not place Razorpay secrets or email API keys in frontend files.
+
+### Important payment note
+The frontend verifies the Razorpay signature through the server. For a production commerce deployment, also configure Razorpay webhooks and persistent order storage/database so payment/order state survives server restarts and can be reconciled if a customer closes the browser or a network interruption occurs.

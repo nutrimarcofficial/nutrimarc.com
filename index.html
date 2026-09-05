@@ -34,7 +34,7 @@
     <header>
         <div class="nav-container">
             <div class="logo-block">
-                <div class="logo-placeholder">NM</div>
+                <a class="brand-mark" href="#about" aria-label="NutriMarc Group home"><img src="logo.jpg" alt="NutriMarc Group logo"></a>
                 <div class="logo-text">
                     <h1>NutriMarc<span>Group</span></h1>
                 </div>
@@ -53,12 +53,20 @@
 
     <!-- Hero Content -->
     <section class="hero" id="about">
+        <div class="hero-glow hero-glow-one"></div>
+        <div class="hero-glow hero-glow-two"></div>
         <div class="hero-content">
-            <h2>Welcome to NutriMarc Group</h2>
-            <p>A multi-disciplinary organization driving vitality through natural homemade foods and leading digital transformations through advanced intelligent computational engineering systems.</p>
+            <div class="hero-eyebrow"><span></span> ONE GROUP. TWO DISTINCT JOURNEYS. <span></span></div>
+            <h2>Nutrition for everyday life.<br><em>Intelligence for tomorrow.</em></h2>
+            <p>NutriMarc Group brings together thoughtfully crafted healthy foods and advanced intelligent systems — built with care, purpose and a long-term vision.</p>
             <div class="hero-buttons">
-                <a href="#nhfs" class="btn btn-primary">NutriMarc Healthy Foods Services</a>
-                <a href="#nais" class="btn btn-secondary">Advanced Intelligent Systems</a>
+                <a href="#nhfs" class="btn btn-primary"><span>🥗</span> Explore Healthy Foods</a>
+                <a href="#nais" class="btn btn-secondary"><span>⚡</span> Explore NAIS</a>
+            </div>
+            <div class="hero-trust">
+                <div><strong>Healthy</strong><span>Homemade • Natural • Tasty</span></div>
+                <div><strong>Advanced</strong><span>AI • Cloud • Data • Engineering</span></div>
+                <div><strong>Purpose-led</strong><span>CSR • Life Coaching • Social Impact</span></div>
             </div>
         </div>
     </section>
@@ -97,14 +105,40 @@
 
             <div class="shop-toolbar">
                 <div>
-                    <h3>Premium Healthy Foods</h3>
-                    <p>Select pack size and quantity for every item you want.</p>
+                    <span class="section-kicker">NHFS MARKETPLACE</span>
+                    <h3>Choose something delicious</h3>
+                    <p>Browse by category, select your pack size, choose quantity and add to your basket.</p>
                 </div>
-                <div class="cart-badge" id="cart-indicator">0 items • ₹0</div>
+                <div class="cart-badge" id="cart-indicator" aria-live="polite">0 items • ₹0</div>
+            </div>
+
+            <div class="store-controls">
+                <div class="category-filters" id="category-filters" role="group" aria-label="Food categories">
+                    <button type="button" class="filter-btn active" data-filter="All">All</button>
+                    <button type="button" class="filter-btn" data-filter="Non-Veg Pickles">Non-Veg Pickles</button>
+                    <button type="button" class="filter-btn" data-filter="Veg Pickles">Veg Pickles</button>
+                    <button type="button" class="filter-btn" data-filter="Savoury">Savouries</button>
+                    <button type="button" class="filter-btn" data-filter="Sweets">Sweets</button>
+                    <button type="button" class="filter-btn" data-filter="Podulu">Podulu</button>
+                    <button type="button" class="filter-btn" data-filter="Chocochip Muffins">Muffins</button>
+                    <button type="button" class="filter-btn" data-filter="Cookies">Cookies</button>
+                    <button type="button" class="filter-btn" data-filter="NutriMarc Special">Special</button>
+                </div>
+                <label class="store-search">
+                    <span>⌕</span>
+                    <input id="product-search" type="search" placeholder="Search healthy foods..." aria-label="Search healthy foods">
+                </label>
             </div>
 
             <div class="product-grid" id="product-grid">
                 <!-- Products are rendered from the canonical catalog in script.js -->
+            </div>
+
+            <div class="food-assurance">
+                <div><span>🌾</span><strong>Millet & grain inspired</strong><small>Thoughtfully selected recipes</small></div>
+                <div><span>🏠</span><strong>Made with care</strong><small>Home-style preparation</small></div>
+                <div><span>✨</span><strong>Simple ingredients</strong><small>No unnecessary artificial colours or flavours</small></div>
+                <div><span>🚚</span><strong>Convenient delivery</strong><small>Free-shipping offers available</small></div>
             </div>
 
             <div class="cart-panel sticky-cart-panel">
@@ -144,8 +178,14 @@
                 <strong>How we are unique:</strong> NAIS operates at the absolute frontier of computational intelligence systems. We don't just offer traditional outsourcing; we build deep core technical transformations. By combining high-density custom cloud architectures with custom enterprise Agentic AI workflows, decentralized blockchain data ledgers, and quantum computing discovery mechanics, we equip enterprises with predictive automation models built for decades of scale.
             </p>
 
-            <h3>Upcoming Professional Technical Bootcamps</h3>
-            <p style="margin-bottom: 15px; color: var(--gray);">Choose one or more programs and submit your registration request. Our advisor will contact you at the details you provide.</p>
+            <div class="subsection-heading">
+                <div>
+                    <span class="section-kicker">PROFESSIONAL BOOTCAMPS</span>
+                    <h3>Build skills that move with the future.</h3>
+                    <p>Choose one or more programs. Submit your details and our advisor will personally follow up.</p>
+                </div>
+                <span class="live-pill">● REGISTRATION OPEN</span>
+            </div>
 
             <div class="bootcamp-grid">
                 <label class="bootcamp-option">
@@ -207,7 +247,7 @@
                         </div>
                     </div>
                     <p id="bootcamp-selection-message" class="inline-form-message" aria-live="polite"></p>
-                    <button type="submit" class="btn btn-secondary">Submit Registration Request</button>
+                    <button type="submit" class="btn btn-secondary boot-submit-btn">Submit Registration Request <span>→</span></button>
                 </form>
                 <div class="advisor-contact">
                     <strong>Need help before registering?</strong>
@@ -333,9 +373,9 @@
             <h2 class="unit-title" style="color: var(--dark); border-bottom: 3px solid var(--dark);">Global Group Corporate Enquiry</h2>
             <p class="unit-desc">Have a general question spanning both our culinary services and high-intelligence operations? Submit your details directly to our corporate compliance team.</p>
             
-            <form action="https://formspree.io/f/mnnqgqov" method="POST" id="global-enquiry-form">
+            <form id="global-enquiry-form" onsubmit="handleGlobalEnquiry(event)">
                 <!-- Formspree fallback or direct fallback redirect placeholder to catch data and email contact@nutrimarc.com -->
-                <input type="hidden" name="_to" value="contact@nutrimarc.com">
+
                 <div class="form-grid">
                     <div class="form-group">
                         <label>Full Legal Name:</label>
@@ -425,7 +465,7 @@
             <h3>Registration Request Received</h3>
             <p id="bootcamp-status-body" class="modal-body-text"></p>
             <div class="bootcamp-support-message">
-                <p><strong>In the meantime, please feel free to reach us over our dedicated support team</strong> available via phone call or WhatsApp.</p>
+                <p><strong>In the meantime, please feel free to reach us over our dedicated support team</strong> available via phone call or WhatsApp on <strong>+91-8919394401</strong>.</p>
                 <div class="advisor-contact modal-advisor">
                     <a href="tel:+918919394401">📞 <strong>+91-8919394401</strong> — Call Us</a>
                     <a href="https://wa.me/918919394401" target="_blank" rel="noopener">💬 <strong>+91-8919394401</strong> — WhatsApp Us</a>
