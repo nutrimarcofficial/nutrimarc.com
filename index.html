@@ -88,6 +88,41 @@ nav a{position:relative}nav a:after{content:"";position:absolute;left:14px;right
 @media(max-width:1050px){.experience-inner{grid-template-columns:1fr 1fr}.experience-label{grid-column:1/-1;border-bottom:1px solid rgba(7,17,13,.07)}.experience-item:nth-child(3){border-left:0}.experience-action{border-left:0;border-top:1px solid rgba(7,17,13,.07)}}
 @media(max-width:620px){.hero{min-height:720px}.experience-rail{padding:0 16px}.experience-inner{grid-template-columns:1fr 1fr;border-radius:20px}.experience-item{padding:14px}.experience-item:nth-child(2){border-left:0}.experience-item:nth-child(4){border-left:0}.experience-action{grid-column:1/-1}.floating-dock{right:10px;left:10px;bottom:10px;justify-content:space-around}.floating-dock a,.floating-dock button{flex:1}.main-container{padding-top:60px}.hero-copy h2{font-size:clamp(3.2rem,16vw,5rem)}}
 @media(prefers-reduced-motion:reduce){.reveal-ready{opacity:1;transform:none;transition:none}.micro-dot,.pulse-dot{animation:none}}
+
+
+/* V8 — SUPER ULTRA MODERN / DIGITAL LUXURY LAYER */
+:root{
+  --v8-ink:#06100b; --v8-forest:#063d29; --v8-emerald:#0c8a5a; --v8-mint:#b8f5d5;
+  --v8-gold:#d9b35f; --v8-champagne:#f4e7c6; --v8-paper:#f7f8f2;
+  --v8-line:rgba(6,16,11,.075); --v8-ease:cubic-bezier(.16,1,.3,1);
+}
+html{scroll-behavior:smooth;scroll-padding-top:92px}
+body{background:radial-gradient(circle at 12% -5%,rgba(12,138,90,.12),transparent 26%),radial-gradient(circle at 92% 8%,rgba(217,179,95,.14),transparent 24%),linear-gradient(180deg,#fcfcf8 0%,#f4f7f2 55%,#edf3ef 100%);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:-20%;z-index:-2;pointer-events:none;background:conic-gradient(from 90deg at 50% 50%,rgba(12,138,90,.025),rgba(217,179,95,.04),rgba(12,138,90,.025));animation:v8spin 28s linear infinite}@keyframes v8spin{to{transform:rotate(360deg)}}
+body:after{content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.12;background-image:radial-gradient(rgba(6,16,11,.5) .5px,transparent .5px);background-size:7px 7px;mix-blend-mode:multiply}
+.lux-ribbon{position:relative;z-index:1001;height:34px;overflow:hidden;background:#06100b;color:#dcefe5;border-bottom:1px solid rgba(217,179,95,.25)}
+.lux-ribbon-track{height:100%;display:flex;align-items:center;justify-content:center;gap:26px;white-space:nowrap;font-size:.62rem;font-weight:800;letter-spacing:.12em}.lux-ribbon-track span{display:inline-flex;align-items:center;gap:8px}.lux-ribbon-track b{color:var(--v8-gold);font-size:.55rem}.lux-ribbon-track i{font-style:normal;color:var(--v8-gold)}
+.scroll-progress{position:fixed;top:34px;left:0;right:0;height:2px;z-index:1100;background:transparent}.scroll-progress span{display:block;width:0;height:100%;background:linear-gradient(90deg,var(--v8-gold),var(--v8-mint),var(--v8-emerald));box-shadow:0 0 12px rgba(184,245,213,.75)}
+header{top:0!important;background:rgba(250,251,247,.72)!important;backdrop-filter:blur(22px) saturate(150%);border-bottom:1px solid rgba(6,16,11,.07)!important}
+.nav-container{min-height:76px}.brand-mark{width:58px;height:58px;border-radius:18px;border:1px solid rgba(217,179,95,.25);box-shadow:0 16px 45px rgba(6,61,41,.16)}
+.hero{min-height:850px;isolation:isolate;background:radial-gradient(circle at 73% 40%,rgba(12,138,90,.17),transparent 29%),radial-gradient(circle at 90% 20%,rgba(217,179,95,.20),transparent 23%),linear-gradient(135deg,#fbfcf9,#f6f0e2 48%,#edf7f0)}
+.hero:after{content:"";position:absolute;width:520px;height:520px;right:-140px;bottom:-210px;border-radius:50%;background:radial-gradient(circle,rgba(12,138,90,.16),transparent 66%);filter:blur(10px);pointer-events:none;animation:v8float 8s ease-in-out infinite alternate}@keyframes v8float{to{transform:translate(-30px,-22px) scale(1.05)}}
+.hero-content{position:relative;z-index:2}.hero-copy h2{font-size:clamp(4rem,8vw,8.4rem);line-height:.84;letter-spacing:-.085em;max-width:950px}.hero-copy h2 em{font-style:normal;background:linear-gradient(120deg,#063d29 10%,#0c8a5a 54%,#b08335 95%);-webkit-background-clip:text;background-clip:text;color:transparent}.hero-copy p{max-width:700px;font-size:1.18rem;line-height:1.78;color:#4d6258}
+.hero-eyebrow{box-shadow:0 12px 30px rgba(6,61,41,.06)!important}.hero-buttons .btn{min-height:56px;border-radius:17px!important;box-shadow:0 14px 35px rgba(6,61,41,.10);transition:transform .35s var(--v8-ease),box-shadow .35s var(--v8-ease)}.hero-buttons .btn:hover{transform:translateY(-4px);box-shadow:0 24px 50px rgba(6,61,41,.16)}
+.hero-proof-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:690px;margin-top:18px}.hero-proof-row>div{display:flex;align-items:center;gap:11px;padding:12px 14px;border:1px solid rgba(255,255,255,.78);border-radius:17px;background:rgba(255,255,255,.45);backdrop-filter:blur(16px);box-shadow:0 12px 35px rgba(6,61,41,.06)}.proof-icon{width:34px;height:34px;display:grid;place-items:center;border-radius:11px;background:#063d29;color:#f5e7c3;font-weight:900}.hero-proof-row strong,.hero-proof-row small{display:block}.hero-proof-row strong{font-size:.78rem;color:#123e2c}.hero-proof-row small{font-size:.67rem;color:#718178;margin-top:2px}
+.hero-bento{transform:perspective(1100px) rotateY(-4deg) rotateX(2deg);transition:transform .8s var(--v8-ease)}.hero-bento:hover{transform:perspective(1100px) rotateY(-1deg) rotateX(0) translateY(-5px)}.bento-card{border-radius:28px!important}.bento-large{min-height:300px}.bento-ai{background:linear-gradient(145deg,#06130e,#0a5f40 60%,#0e8a5b)!important}.ai-ring{box-shadow:0 0 0 1px rgba(184,245,213,.18),0 0 60px rgba(184,245,213,.15)!important}
+.manifesto-strip{position:relative;overflow:hidden;margin:72px auto 0;max-width:1320px;padding:0 24px}.manifesto-inner{position:relative;overflow:hidden;border-radius:34px;padding:62px 68px;background:linear-gradient(120deg,#06130e,#0b4f36 58%,#092b1f);color:#fff;box-shadow:0 35px 100px rgba(4,35,23,.24)}.manifesto-inner:before,.manifesto-inner:after{content:"";position:absolute;border-radius:50%;pointer-events:none}.manifesto-inner:before{width:480px;height:480px;right:-170px;top:-240px;background:radial-gradient(circle,rgba(217,179,95,.30),transparent 67%)}.manifesto-inner:after{width:360px;height:360px;left:-170px;bottom:-220px;background:radial-gradient(circle,rgba(184,245,213,.15),transparent 66%)}.manifesto-label{position:relative;z-index:1;color:#b8f5d5;font-size:.68rem;letter-spacing:.18em;font-weight:900}.manifesto-inner h3{position:relative;z-index:1;max-width:900px;margin:12px 0 16px;font-size:clamp(2.7rem,5vw,5.6rem);line-height:.92;letter-spacing:-.065em}.manifesto-inner h3 em{color:#e6ca82;font-style:normal}.manifesto-inner p{position:relative;z-index:1;max-width:720px;color:rgba(255,255,255,.70);line-height:1.75}.manifesto-stats{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:9px;margin-top:30px}.manifesto-stats span{padding:9px 12px;border:1px solid rgba(255,255,255,.12);border-radius:999px;background:rgba(255,255,255,.055);font-size:.72rem;color:#dcefe5}.manifesto-stats strong{color:#e6ca82;margin-right:6px}
+.lux-product-spotlight{position:relative;display:flex;justify-content:space-between;align-items:end;gap:24px;margin:22px 0 26px;padding:24px 26px;border-radius:25px;border:1px solid rgba(6,61,41,.09);background:linear-gradient(135deg,rgba(255,255,255,.94),rgba(238,247,241,.82));box-shadow:0 16px 45px rgba(6,61,41,.06);overflow:hidden}.lux-product-spotlight:after{content:"";position:absolute;width:250px;height:250px;right:-100px;top:-140px;border-radius:50%;background:radial-gradient(circle,rgba(217,179,95,.18),transparent 68%)}.lux-product-spotlight h4{font-size:1.55rem;letter-spacing:-.035em;margin:5px 0}.lux-product-spotlight p{max-width:680px;color:#687a71;margin:0;line-height:1.65}.spotlight-link{position:relative;z-index:1;flex:0 0 auto;text-decoration:none;padding:12px 15px;border-radius:14px;background:#06130e;color:#fff;font-size:.78rem;font-weight:800;box-shadow:0 12px 28px rgba(6,19,14,.14)}.spotlight-link b{color:#e6ca82;margin-left:7px}
+.unit-section{border-radius:38px!important;border:1px solid rgba(255,255,255,.86)!important;box-shadow:0 34px 110px rgba(6,35,23,.085)!important}.unit-section:before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(135deg,rgba(255,255,255,.40),transparent 34%);opacity:.8}.unit-section{position:relative;overflow:hidden}.unit-section>*{position:relative;z-index:1}
+.product-card{border-radius:26px!important}.product-card .product-image-wrap{border-radius:22px!important;min-height:205px!important}.product-card:hover .visual-orb{transform:scale(1.18) rotate(-2deg);transition:transform .6s var(--v8-ease)}
+.cart-panel{border-radius:28px!important;box-shadow:0 25px 70px rgba(6,35,23,.08)!important}.cart-grand strong{font-size:1.45rem!important;color:#063d29!important}.checkout-options .btn{border-radius:15px!important;min-height:48px}
+.nais-spotlight{border-radius:26px!important;background:linear-gradient(120deg,#06130e,#0b4f36,#123b4a)!important;box-shadow:0 32px 90px rgba(6,38,48,.20)!important}.bootcamp-option{border-radius:22px!important;background:linear-gradient(145deg,#fff,#f5f8f6)!important;box-shadow:0 12px 38px rgba(6,35,23,.05)!important}.bootcamp-option:has(input:checked){box-shadow:0 18px 50px rgba(12,138,90,.13)!important}
+.bootcamp-registration-card{border-radius:30px!important;box-shadow:0 35px 95px rgba(6,38,48,.22)!important}.form-group input,.form-group textarea,.form-group select{border-radius:14px!important;border:1px solid rgba(6,16,11,.10)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.75);transition:border-color .25s,box-shadow .25s,transform .25s}.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:#0c8a5a!important;box-shadow:0 0 0 4px rgba(12,138,90,.10)!important;outline:none;transform:translateY(-1px)}
+.csr-card{border-radius:26px!important}.csr-impact{border-radius:24px!important}.floating-dock{border:1px solid rgba(217,179,95,.20)!important;background:rgba(4,16,11,.88)!important;box-shadow:0 25px 70px rgba(0,0,0,.28)!important}
+@media(max-width:900px){.hero{min-height:780px}.hero-bento{transform:none}.manifesto-inner{padding:46px 34px}.hero-proof-row{grid-template-columns:1fr}.lux-product-spotlight{align-items:start;flex-direction:column}.spotlight-link{width:max-content}}
+@media(max-width:600px){.lux-ribbon-track{justify-content:flex-start;gap:20px;animation:v8marquee 22s linear infinite;width:max-content}@keyframes v8marquee{to{transform:translateX(-50%)}}.manifesto-strip{margin-top:52px;padding:0 16px}.manifesto-inner{padding:38px 24px;border-radius:28px}.manifesto-inner h3{font-size:clamp(2.6rem,14vw,4rem)}.hero-copy h2{font-size:clamp(3.4rem,17vw,5.4rem)}.lux-product-spotlight{padding:20px}.experience-rail{margin-top:-24px}}
+@media(prefers-reduced-motion:reduce){body:before{animation:none}.hero:after{animation:none}.lux-ribbon-track{animation:none!important}}
+header nav a.nav-active{color:#063d29!important} header nav a.nav-active:after{transform:scaleX(1)!important}
 </style>
 </head>
 <body>
@@ -123,6 +158,16 @@ nav a{position:relative}nav a:after{content:"";position:absolute;left:14px;right
         </div>
     </header>
 
+    <div class="lux-ribbon" role="region" aria-label="NutriMarc highlights">
+        <div class="lux-ribbon-track">
+            <span><b>01</b> SMALL-BATCH HEALTHY FOODS</span><i>✦</i>
+            <span><b>02</b> PROFESSIONAL AI & CLOUD BOOTCAMPS</span><i>✦</i>
+            <span><b>03</b> PURPOSE-LED CSR</span><i>✦</i>
+            <span><b>04</b> CALL / WHATSAPP +91 89193 94401</span><i>✦</i>
+        </div>
+    </div>
+    <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
+
     <!-- Hero Content -->
     <section class="hero" id="about">
         <div class="hero-glow hero-glow-one"></div>
@@ -137,6 +182,10 @@ nav a{position:relative}nav a:after{content:"";position:absolute;left:14px;right
                     <a href="#nais" class="btn btn-secondary"><span>✦</span> Explore NAIS <b>↗</b></a>
                 </div>
                 <div class="hero-micro"><span class="micro-dot"></span> Fresh orders · Professional bootcamps · Purpose-led CSR</div>
+                <div class="hero-proof-row" aria-label="NutriMarc highlights">
+                    <div><span class="proof-icon">✦</span><div><strong>Made with intention</strong><small>Food, technology & impact</small></div></div>
+                    <div><span class="proof-icon">↗</span><div><strong>Built for tomorrow</strong><small>Modern experiences, human values</small></div></div>
+                </div>
             </div>
             <div class="hero-bento" aria-label="NutriMarc highlights">
                 <div class="bento-card bento-large"><span class="bento-index">01</span><div class="bento-art food-art"><i>🌾</i><i>🌶️</i><i>🍪</i></div><strong>Healthy Foods</strong><small>Homemade · Natural · Tasty</small><a href="#nhfs">Explore collection →</a></div>
@@ -155,6 +204,15 @@ nav a{position:relative}nav a:after{content:"";position:absolute;left:14px;right
             <div class="experience-item"><strong>02</strong><span>Future Skills</span><small>Professional bootcamps</small></div>
             <div class="experience-item"><strong>03</strong><span>Human Impact</span><small>Purpose-led CSR</small></div>
             <div class="experience-item experience-action"><a href="#enquiry">Start a conversation <b>↗</b></a></div>
+        </div>
+    </section>
+
+    <section class="manifesto-strip" aria-label="NutriMarc manifesto">
+        <div class="manifesto-inner">
+            <span class="manifesto-label">A DIFFERENT KIND OF COMPANY</span>
+            <h3>Better choices for <em>today.</em><br>Braver possibilities for <em>tomorrow.</em></h3>
+            <p>NutriMarc brings nourishment, knowledge and purpose into one evolving ecosystem — designed around people first.</p>
+            <div class="manifesto-stats"><span><strong>01</strong> Nourish</span><span><strong>02</strong> Enable</span><span><strong>03</strong> Empower</span></div>
         </div>
     </section>
 
@@ -219,6 +277,10 @@ nav a{position:relative}nav a:after{content:"";position:absolute;left:14px;right
             </div>
 
             <div class="collection-intro"><div><span class="collection-number">01 / 08</span><h4>Curated for your everyday table</h4></div><p>Small-batch favourites, presented with clear pack sizes and transparent pricing. Select, personalise and add to your basket.</p></div>
+            <div class="lux-product-spotlight">
+                <div><span class="section-kicker">SIGNATURE COLLECTION</span><h4>Comfort food, elevated.</h4><p>Pick a familiar favourite, make it yours with the right pack size, and let NutriMarc bring it closer to home.</p></div>
+                <a href="#product-grid" class="spotlight-link">Browse the collection <b>↓</b></a>
+            </div>
             <div class="product-grid" id="product-grid">
                 <!-- Products are rendered from the canonical catalog in script.js -->
             </div>
@@ -1121,6 +1183,36 @@ function initCounters() {
   }), {threshold:0.5});
   counters.forEach(counter => observer.observe(counter));
 }
+
+
+/* V8 premium motion system — defensive and non-blocking */
+(function(){
+  function initV8(){
+    try{
+      const bar=document.getElementById('scroll-progress-bar');
+      if(bar){
+        const update=()=>{const h=document.documentElement.scrollHeight-window.innerHeight;bar.style.width=(h>0?(window.scrollY/h)*100:0)+'%';};
+        update(); window.addEventListener('scroll',update,{passive:true}); window.addEventListener('resize',update,{passive:true});
+      }
+      const fine=window.matchMedia && window.matchMedia('(pointer:fine)').matches;
+      const reduced=window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+      if(fine && !reduced){
+        document.querySelectorAll('.hero-buttons .btn,.spotlight-link,.floating-dock a,.floating-dock button').forEach(el=>{
+          el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5;const y=(e.clientY-r.top)/r.height-.5;el.style.transform=`translateY(-3px) perspective(500px) rotateX(${(-y*2).toFixed(2)}deg) rotateY(${(x*2).toFixed(2)}deg)`;});
+          el.addEventListener('pointerleave',()=>{el.style.transform='';});
+        });
+      }
+      // Make the current section subtly visible in navigation.
+      const links=[...document.querySelectorAll('header nav a[href^="#"]')];
+      const sections=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+      if('IntersectionObserver' in window && sections.length){
+        const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('nav-active',a.getAttribute('href')==='#'+e.target.id));}}),{rootMargin:'-35% 0px -55% 0px',threshold:0});
+        sections.forEach(s=>io.observe(s));
+      }
+    }catch(err){console.warn('V8 motion enhancement skipped',err)}
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initV8);else initV8();
+})();
 </script>
 </body>
 </html>

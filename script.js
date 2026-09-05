@@ -503,3 +503,32 @@ function initLuxuryInteractions(){
 }
 if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',initLuxuryInteractions); else initLuxuryInteractions();
 
+/* V8 premium motion system — defensive and non-blocking */
+(function(){
+  function initV8(){
+    try{
+      const bar=document.getElementById('scroll-progress-bar');
+      if(bar){
+        const update=()=>{const h=document.documentElement.scrollHeight-window.innerHeight;bar.style.width=(h>0?(window.scrollY/h)*100:0)+'%';};
+        update(); window.addEventListener('scroll',update,{passive:true}); window.addEventListener('resize',update,{passive:true});
+      }
+      const fine=window.matchMedia && window.matchMedia('(pointer:fine)').matches;
+      const reduced=window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+      if(fine && !reduced){
+        document.querySelectorAll('.hero-buttons .btn,.spotlight-link,.floating-dock a,.floating-dock button').forEach(el=>{
+          el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5;const y=(e.clientY-r.top)/r.height-.5;el.style.transform=`translateY(-3px) perspective(500px) rotateX(${(-y*2).toFixed(2)}deg) rotateY(${(x*2).toFixed(2)}deg)`;});
+          el.addEventListener('pointerleave',()=>{el.style.transform='';});
+        });
+      }
+      // Make the current section subtly visible in navigation.
+      const links=[...document.querySelectorAll('header nav a[href^="#"]')];
+      const sections=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+      if('IntersectionObserver' in window && sections.length){
+        const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('nav-active',a.getAttribute('href')==='#'+e.target.id));}}),{rootMargin:'-35% 0px -55% 0px',threshold:0});
+        sections.forEach(s=>io.observe(s));
+      }
+    }catch(err){console.warn('V8 motion enhancement skipped',err)}
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initV8);else initV8();
+})();
+
